@@ -13,7 +13,7 @@ Of course, the solution was to leverage my knowledge of nix to wrap up
 everything into a nice interface. The key to the interface is a new
 function `haskell.lib.addPlugin` which augments an existing package with a plugin.
 
-```
+```nix
 addPlugin dump-core-plugin either
 ```
 
@@ -55,7 +55,7 @@ which takes a plugin and a package as an argument and then compiles the package
 whilst running the plugin. For example, if we want to inspect the core of
 the `either` package, we could specify this like so.
 
-```
+```nix
 addPlugin dump-core-plugin either
 ```
 
@@ -64,7 +64,7 @@ has the same name as the plugin which contains the output of the plugin. So
 in this case, we will find the relevant HTML by inspecting the `DumpCore`
 attribute. It will also be symlinked to `result-DumpCore`.
 
-```
+```nix
 either-core = (addPlugin dump-core-plugin either).DumpCore
 ```
 

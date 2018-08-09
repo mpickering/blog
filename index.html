@@ -1,14 +1,11 @@
-<p> </p>
 $for(posts)$
-<li class="post_item">
-    <span class="title"> $title$ </span>
-    <span class="info"> $date$ </span>
+<h2> $title$ <small class="text-muted"> $date$ </small> </span> </h2>
      $if(teaser)$
         $teaser$
         <a href="$url$">Read more</a>
       $else$
         $body$
-      $endif$</p>
-</li>
+      $endif$
+<hr>
 $endfor$
-  
+

@@ -1,0 +1,22 @@
+---
+title: Diff word documents with pandoc
+---
+
+Thanks to the work of Jesse Rosenthal, pandoc has recently become capable of reading docx documents. This additional functional now makes it extremely easy to diff two docx files without any additional tools. 
+
+Given two documents `old.docx` and `new.docx` the following command can calculate the diff. (The choice to convert to markdown is arbritary but works best in my experience)
+
+```
+diff <(pandoc -t markdown old.docx) <(pandoc -t markdown new.docx)
+```
+
+The output from two example documents, the second identical to the first with an additional line:
+
+```
+> diff <(pandoc -t markdown old.docx) <(pandoc -t markdown new.docx )
+2a3,4
+> This is the new line in the new file
+>
+```
+
+Easy as that!

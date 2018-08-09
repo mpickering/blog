@@ -40,7 +40,7 @@ nixpkgs.stdenv.mkDerivation {
 
   name = "blog-0.1";
 
-  src = ./.;
+  src = nixpkgs.lib.cleanSource ./.;
   LANG = "en_US.UTF-8";
   LOCALE_ARCHIVE = "${nixpkgs.glibcLocales}/lib/locale/locale-archive";
 

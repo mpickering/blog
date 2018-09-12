@@ -123,7 +123,8 @@ but now shouldn't impose any additional inconvenience.
 # Related Links
 
 * [GHC User's Guide](http://mpickering.github.io/ghc-docs/build-html/users_guide/extending_ghc.html#controlling-recompilation)
-* Reddit comments
+* [Reddit comments](https://www.reddit.com/r/haskell/comments/967o6k/specifying_how_a_plugin_affects_recompilation/)
+
 
 
 

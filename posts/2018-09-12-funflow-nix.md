@@ -435,4 +435,4 @@ suggested `docker` support.
 
 * [Map of orienteering maps](http://mpickering.github.io/maps.html)
 * [Source code](https://github.com/mpickering/rg-map)
-* Reddit comments
+* [Reddit comments](https://www.reddit.com/r/haskell/comments/9f7kq9/using_funflow_to_cache_a_nix_based_workflow/)

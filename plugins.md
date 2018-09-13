@@ -14,15 +14,11 @@ This page provides an index of different resources about GHC plugins.
 * [nboldi - 2018-04-14 - Proposal 0017: Source Plugins](https://github.com/ghc-proposals/ghc-proposals/blob/master/proposals/0017-source-plugins.rst)
 * [nomeata - 2018-02-02 - The magic "Just do it" type class](https://www.joachim-breitner.de/blog/735-The_magic_%E2%80%9CJust_do_it%E2%80%9D_type_class)
 * [Tweag I/O - 2017-09-22 - GHC compiler plugins in the wild: typing Java](https://www.tweag.io/posts/2017-09-22-inline-java-ghc-plugin.html)
-
 * [christiaanb - 2016-08-17 - Solving custom operatns in KnownNat constraints](https://qbaylogic.com/blog/2016/08/17/solving-knownnat-custom-operations.html)
 * [christiaanb - 2016-08-10 - Solving GHC's KnownNat constraints](https://qbaylogic.com/blog/2016/08/10/solving-knownnat-constraints-plugin.html)
 * [Adam Gundry - 2015-07-17 - A Typechecker Plugin for Units of Measure](http://adam.gundry.co.uk/pub/typechecker-plugins/)
-
 * [Eric Seidel - 2014-12-04 - (Ab)using Compiler Plugins to Improve Embedded DSLs](https://galois.com/blog/2014/12/abusing-compiler-plugins-improve-embedded-dsls/)
-
-* Max Bolinbroke - Compiler Plugins For GHC [1](http://blog.omega-prime.co.uk/2008/06/15/compiler-plugins-for-ghc-the-first-week/)[2](http://blog.omega-prime.co.uk/2008/06/23/compiler-plugins-for-ghc-week-two/)[34](http://blog.omega-prime.co.uk/2008/07/05/compiler-plugins-for-ghc-weeks-three-and-four/)[5](http://blog.omega-prime.co.uk/2008/07/14/compiler-plugins-for-ghc-week-five/)[6](http://blog.omega-prime.co.uk/2008/07/22/compiler-plugins-for-ghc-week-six/).
-
+* Max Bolinbroke - Compiler Plugins For GHC [1](http://blog.omega-prime.co.uk/2008/06/15/compiler-plugins-for-ghc-the-first-week/)[2](http://blog.omega-prime.co.uk/2008/06/23/compiler-plugins-for-ghc-week-two/)[34](http://blog.omega-prime.co.uk/2008/07/05/compiler-plugins-for-ghc-weeks-three-and-four/)[5](http://blog.omega-prime.co.uk/2008/07/14/compiler-plugins-for-ghc-week-five/)[6](http://blog.omega-prime.co.uk/2008/07/22/compiler-plugins-for-ghc-week-six/)
 * [Max Bolingbroke - 2008-04-24 - The Summer Of Code, or Compiler Development for the Masses](http://blog.omega-prime.co.uk/2008/04/24/the-summer-of-code-or-compiler-development-for-the-masses/)
 
 
@@ -51,7 +47,7 @@ they are GHC errors.
 
 : Instruments an assertion to print the value of its failed parts when it fails.
 
-[`what-it-do`- ocharles](https://github.com/ocharles/what-it-do)
+[`what-it-do` - ocharles](https://github.com/ocharles/what-it-do)
 
 : Rewrites `do` expressions to trace all binds.
 
@@ -62,7 +58,7 @@ they are GHC errors.
 [`lift-plugin` - mpickering](https://github.com/mpickering/lift-plugin)
 
 : An experimental plugin which introduces an operator which acts like an overloadable
-bracket operator.
+bracket.
 
 [`graphmod-plugin` - mpickering](https://github.com/mpickering/graphmod-plugin)
 

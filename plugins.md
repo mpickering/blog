@@ -6,8 +6,10 @@ This page provides an index of different resources about GHC plugins.
 
 ## Blog posts
 
+* [waddlaw - 2018-12-01 - GHC Source Plugin 作ってみた](https://qiita.com/waddlaw/items/65b57517f105fcbbe724)
+* [Kenny Shen - 2018-10-31 - Source modifications via GHC API and ghc-exactprint](https://www.machinesung.com/scribbles/ghc-api.html)
 * [Jason Shipman - 2018-10-13 - Subvert Your Type Checker Today!](https://jship.github.io/posts/2018-10-13-subvert-your-type-checker-today.html)
-* [Gabe Dijkstra - 2018-10-11 - Write Your Own GHC TYpe Checker Plugins](https://skillsmatter.com/skillscasts/12388-write-your-own-ghc-type-checker-plugins#video)
+* [Gabe Dijkstra - 2018-10-11 - Write Your Own GHC Type Checker Plugins](https://skillsmatter.com/skillscasts/12388-write-your-own-ghc-type-checker-plugins#video)
 * [phadej - 2018-09-13 - Regular expressions of types](http://oleg.fi/gists/posts/2018-09-13-regular-expressions-of-types.html)
 * [mpickering - 2018-08-10 - Specifying how a plugin affects recompilation](http://mpickering.github.io/posts/2018-08-10-plugins-recompilation.html)
 * [mpickering - 2018-08-09 - Reimplementing graphmod as a source plugin](http://mpickering.github.io/posts/2018-08-09-source-plugin-graphmod.html)

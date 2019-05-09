@@ -76,6 +76,15 @@ bracket.
 : Implementation of a syntax for HLists and solver for a custom `MatchI` constraint
 which implements a custom type family for regular expressions.
 
+[`detect-unquantified-tyvars`- Thomas Winant](https://github.com/mrBliss/detect-unquantified-tyvars)
+
+: Warn about type variables which are not explitly quantified.
+
+[`source-constraints` - Markus Schirp](https://github.com/schirp-dso/source-constraints)
+
+: Enforce invariants on the structure of programs. For example: that an import
+list is sorted.
+
 
 
 ## Core plugins

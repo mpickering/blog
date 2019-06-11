@@ -6,6 +6,7 @@ This page provides an index of different resources about GHC plugins.
 
 ## Blog posts
 
+* [Nicolas Frisby - 2019-05-26 - Notes for Authors of Type Checker Plugins](https://gitlab.haskell.org/ghc/ghc/wikis/plugins/type-checker/notes)
 * [waddlaw - 2018-12-01 - GHC Source Plugin 作ってみた](https://qiita.com/waddlaw/items/65b57517f105fcbbe724)
 * [Kenny Shen - 2018-10-31 - Source modifications via GHC API and ghc-exactprint](https://www.machinesung.com/scribbles/ghc-api.html)
 * [Jason Shipman - 2018-10-13 - Subvert Your Type Checker Today!](https://jship.github.io/posts/2018-10-13-subvert-your-type-checker-today.html)

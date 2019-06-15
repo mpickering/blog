@@ -74,6 +74,9 @@ bracket.
 : Implementation of a syntax for HLists and solver for a custom `MatchI` constraint
 which implements a custom type family for regular expressions.
 
+[`record-dot-preprocessor` - ndmitchell](https://github.com/ndmitchell/record-dot-preprocessor)
+
+: Record dot syntax: Access record fields with `record.field`.
 
 
 ## Core plugins

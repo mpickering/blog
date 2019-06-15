@@ -88,6 +88,10 @@ which implements a custom type family for regular expressions.
 : Enforce invariants on the structure of programs. For example: that an import
 list is sorted.
 
+[`record-dot-preprocessor` - ndmitchell](https://github.com/ndmitchell/record-dot-preprocessor)
+
+: Record dot syntax: Access record fields with `record.field`.
+
 
 
 ## Core plugins

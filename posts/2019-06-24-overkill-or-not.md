@@ -31,7 +31,7 @@ examples/ghc.eventlog --bands 10
 ```
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A simple [pandoc filter](https://pandoc.org/filters.html) identifiers a code
+A [pandoc filter](https://pandoc.org/filters.html) identifiers a code
 block which has the `eventlog` class and replaces it with the suitable visualisation.
 Options can be specified as attributes or using normal command line arguments.
 
@@ -147,7 +147,7 @@ the rest of the documentation can be followed but with the difference that the r
 is passed as an argument to `mkCabalProjectPkgSet` rather than an explicit `pkgs.nix` file.
 
 
-A simple derivation which generates the documentation site is also created.
+A derivation which generates the documentation site is also created.
 The definition is simple because `haskell.nix` takes care of building the site
 generator for us. All the derivation does it apply the site generator to the
 contents of the `docs/` subdirectory.

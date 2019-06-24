@@ -2,6 +2,10 @@
   margin-top: 10px;
 }
 
+#content {
+  max-width: 800px;
+}
+
 body {
     font-family: Vollkorn;
 }

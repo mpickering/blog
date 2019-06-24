@@ -92,8 +92,6 @@ list is sorted.
 
 : Record dot syntax: Access record fields with `record.field`.
 
-
-
 ## Core plugins
 
 [`dump-core` - yav](https://github.com/yav/dump-core)

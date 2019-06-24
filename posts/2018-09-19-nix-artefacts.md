@@ -40,7 +40,7 @@ The most important step of the whole process is to "pin" our version of nixpkgs 
 a specific version so that anyone else trying to build the image will use the
 same versions of all the libraries and system dependencies.
 
-Once we have established a commit of nixpkgs that out package builds with. We
+Once we have established a commit of nixpkgs that our package builds with. We
 can use `nix-prefetch-git` in order to create `nixpkgs.json` which will provide
 the information about the pin.
 
@@ -127,7 +127,7 @@ The result will be a `.tar.gz` which can be loaded into docker and run as normal
 ## Step 3: Including the artefact
 
 First we'll deal with making the executable itself available on the image.
-Remember that the source code the the benchmarks, which is a normal Haskell package,
+Remember that the source code of the benchmarks, which is a normal Haskell package,
 is located in `benchmarks/`.
 
 We need to tell nix how to build the benchmarks. The standard way to do this is to
@@ -181,7 +181,7 @@ default. In our case, the user will type `bench` and it will run the benchmarks.
 
 ## Step 4: Including the source files
 
-The next step is to add the source files to the image. To do this we use a the
+The next step is to add the source files to the image. To do this we use the
 `runCommand` script to make a simple derivation which copies some files into the
 right place.
 
@@ -190,7 +190,6 @@ right place.
 benchmarks-raw = ./benchmarks;
 benchmarks =
   runCommand "benchmarks" {} ''
-  mkdir -p $out/programs
   mkdir -p $out/programs/benchmarks
   cp -r ${benchmarks-raw}/* $out/programs/benchmarks
 '';
@@ -264,7 +263,6 @@ let
     benchmarks-raw = ./benchmarks;
     benchmarks =
       runCommand "benchmarks" {} ''
-        mkdir -p $out/programs
         mkdir -p $out/programs/benchmarks
         cp -r ${benchmarks-raw}/* $out/programs/benchmarks
       '';
@@ -272,7 +270,6 @@ let
     library-raw = ./generic-lens-1.0.0.1;
     library =
       runCommand "benchmarks" {} ''
-        mkdir -p $out/programs
         mkdir -p $out/programs/library
         cp -r ${library-raw}/* $out/programs/library
       '';
@@ -323,7 +320,7 @@ already using nix, you probably know what you're doing anyway.
 * [Quick and Easy Nixpkgs Pinning - Vaibhav Sagar](https://vaibhavsagar.com/blog/2018/05/27/quick-easy-nixpkgs-pinning/)
 * [`dockerTools` documentation](https://nixos.org/nixpkgs/manual/#sec-pkgs-dockerTools)
 * [Reproducible Environments With Nix - Blair Archibald](https://www.software.ac.uk/blog/2017-10-05-reproducible-environments-nix)
-* Reddit comments
+* [Reddit comments](https://www.reddit.com/r/haskell/comments/9h6xh2/packaging_a_haskell_library_for_artefact/)
 
 
 

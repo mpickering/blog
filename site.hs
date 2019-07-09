@@ -17,11 +17,15 @@ main = hakyll $ do
         route   idRoute
         compile copyFileCompiler
 
+    match "papers/*" $ do
+        route   idRoute
+        compile copyFileCompiler
+
     match "css/*" $ do
         route   idRoute
         compile compressCssCompiler
 
-    match (fromList ["about.markdown", "plugins.md"]) $ do
+    match (fromList ["about.markdown", "plugins.md", "publications.md"]) $ do
         route   $ setExtension "html"
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/default.html" defaultContext

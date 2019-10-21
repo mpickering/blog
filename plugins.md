@@ -1,5 +1,5 @@
 ---
-title: Plugins
+title: GHC Plugins Resource Index
 ---
 
 This page provides an index of different resources about GHC plugins.

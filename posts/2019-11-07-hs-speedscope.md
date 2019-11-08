@@ -7,8 +7,12 @@ performance of a Haskell program. speedscope is an interactive flamegraph visual
 visualise the output of the `-p` profiling option. Here's how to use it:
 
 1. Run your program with `prog +RTS -p -l-au`. This will create an eventlog with cost centre stack sample events.
-2. Convert the eventlog into the speedscope JSON format using `hs-speedscope prog.eventlog`.
-3. Load the resulting `prog.eventlog.json` file into [speedscope.app](http://ww.speedscope.app).
+2. Convert the eventlog into the speedscope JSON format using [`hs-speedscope`](https://github.com/mpickering/hs-speedscope). The `hs-speedscope` executable takes an eventlog file as the input and produces the speedscope JSON file.
+3. Load the resulting `prog.eventlog.json` file into [speedscope.app](http://www.speedscope.app).
+
+<!--more-->
+
+## Using Speedscope
 
 Speedscope then has three modes for viewing the profile. The default mode shows you the executation trace of your
 program. The call stack extends downwards, the wider the box, the more time was spent in that part of the program.
@@ -30,7 +34,7 @@ most expensive cost centre by subtracting the total time spent beneath that cost
 For example, if `f` calls `g` and `h`, the cost of in `f` is calculated by the total time for `f` minus the time spend in `g` and `h`.
 If the cost of `f` is high, then there is some computation happening in `f` which is not captured by any further cost centres.
 
-[![](../images/speedscope3.png){width=100%}](/image/speedscope3.png)
+[![](../images/speedscope3.png){width=100%}](/images/speedscope3.png)
 
 ## How is this different to the other profile visualisers?
 
@@ -47,8 +51,15 @@ the default view which shows an executation trace of your program hasn't worked 
 of `-pj` is too generalised. If you program ends up calling the same code path many different times during the
 executation of the program, they are all identified in the final profile.
 
+The second important difference is that each capability will be displayed on a
+separate profile. This makes profiling more useful for parallel programs.
+
 ## How does it work?
 
 I [added support](https://gitlab.haskell.org/ghc/ghc/merge_requests/1927) to dump the raw output from `-p` to the eventlog.
 Now it's possible to process the raw information in order to produce the format that speedscope requires.
 
+## Additional Links
+
+* [Reddit](https://www.reddit.com/r/haskell/comments/dt9acz/introducing_hsspeedscope/)
+* [`hs-speedscope`](https://github.com/mpickering/hs-speedscope)

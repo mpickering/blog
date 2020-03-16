@@ -504,7 +504,9 @@ a Haskell IDE. I'm looking forward to rewriting an IDE again next year.
 ## Related Links
 
 * [Project Branch](https://github.com/mpickering/ghcide/tree/reflex)
-* Reddit discussion
+* [Anders Hejlsberg on Modern Compiler Construction](https://channel9.msdn.com/Blogs/Seth-Juarez/Anders-Hejlsberg-on-Modern-Compiler-Construction)
+* [Responsive compilers - Nicholas Matsakis - PLISS 2019](https://www.youtube.com/watch?v=N6b44kMS6OM)
+* [Reddit discussion](https://www.reddit.com/r/haskell/comments/fjq4c2/an_ide_implemented_using_reflex/)
 
 
 

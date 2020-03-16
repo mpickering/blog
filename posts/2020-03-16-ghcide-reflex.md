@@ -46,7 +46,7 @@ What did I imagine the primary benefits to this project would be?
 * Handlers for LSP requests can be written in the same language as the functions
   which computed the module graph.
 
-In short, I now have an IDE which works and is completely implemented using reflex
+In short, I [now have an IDE](https://github.com/mpickering/ghcide/tree/reflex) which works and is completely implemented using reflex
 which gives you a point to be able to evaluate the costs and benefits to both approaches.
 
 In this post I will describe some of the basic abstractions which I implemented
@@ -503,6 +503,7 @@ a Haskell IDE. I'm looking forward to rewriting an IDE again next year.
 
 ## Related Links
 
+* [Project Branch](https://github.com/mpickering/ghcide/tree/reflex)
 * Reddit discussion
 
 

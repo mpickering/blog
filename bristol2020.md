@@ -4,8 +4,8 @@ title: Bristol Haskell Hackathon 2020
 
 # Bristol Haskell Hackathon 2020
 
-The *Bristol Haskell Hackathon* is a two day long hackathon located in Bristol, UK.
-This year it is being organised for the first and probably last time!
+The *Bristol Haskell Hackathon* was a two day long hackathon located in Bristol, UK.
+In 2020 it was being organised for the first and probably last time!
 
 <div class="table">
 
@@ -16,6 +16,16 @@ Time    09:00 - 17:00
 ---------------------------------------------------------------------------------------------------------
 
 </div>
+
+## Thank You
+
+Thank you for everyone for attended the hackathon. I had a great time meeting
+old friends, new friends and a curious pidgeon. This information page is
+preservered for posterity.
+
+![Bristol Participants](images/bristol-hackathon2020.jpg){width=100%}\
+
+------------------------------------------------------------------------------
 
 Anyone interested in Haskell is welcome to attend. Whether you are a beginner or
 an expert it would be great to meet you in Bristol.
@@ -32,20 +42,42 @@ different options for accommodation, places to eat and things to do.
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2486.1208493262548!2d-2.6049994096362834!3d51.45593758246193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48718dda3d615ea7%3A0xc8073eb4421ac0c4!2sMerchant%20Venturers%20Building!5e0!3m2!1sen!2suk!4v1571510261313!5m2!1sen!2suk" width="400" height="250" frameborder="0" style="border:0; margin:auto; display:block;" allowfullscreen=""></iframe>
 
-## Registration
+## Schedule
 
-Registration is free but you must register. There is a limit of about 80 participants.
-<div class="text-center">
-<a href="bristol2020-register.html"><button type="button" class="btn btn-primary">Register Here</button></a>
+### Saturday
+
+<div class="table">
+
+------  -------------------------------------------------------------------------------------------------
+09:00   Doors Open
+10:00   Project Introductions
+12:30   Lunch/"Excursion"/Group Photo to [Brandon Hill and Cabot Tower](https://visitbristol.co.uk/things-to-do/cabot-tower-and-brandon-hill-p24401)
+17:00   End of Day 1
+---------------------------------------------------------------------------------------------------------
+
 </div>
-We are using the [zureg](https://github.com/zfoh/zureg) registration system,
-thank you to the organiser of ZuriHac for making it so easy to customise and
-use for our event.
 
-## Projects
+### Sunday
 
-TBC - You can describe projects you're interested in working on when
-registering.
+<div class="table">
+
+------  -------------------------------------------------------------------------------------------------
+09:00   Doors Open
+12:30   Lunch
+15:00   Project Demonstrations
+17:00   End of Hackathon
+---------------------------------------------------------------------------------------------------------
+
+</div>
+
+## Local Information
+
+* [Project Ideas on Discourse](https://discourse.haskell.org/t/bristol-2020-project-ideas/1053)
+* [Invitation to Hackathon Zulip Channel](https://bristolhaskell.zulipchat.com/join/uahkktr4vbd5e2ovg369t616/)
+* Wifi SSID: [UoB Guest](https://www.wireless.bris.ac.uk/visitors/) or eduroam
+* The room where the hackathon is located should not be considered secure. It is
+  advised to take your laptop with you when you leave.
+
 
 ## Getting to Bristol
 

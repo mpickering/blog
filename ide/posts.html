@@ -1,0 +1,27 @@
+<h2>IDE 2020</h2>
+
+<p>On this minisite you can keep track of our progress improving Haskell's interactive
+editing experience. Each Friday we'll post a new update about what
+has been going on. </p>
+
+<h3>Latest Post</h3>
+
+
+$for(posts-show)$
+<h4> $title$ <small class="text-muted"> $author$ - $date$ </small> </span> </h4>
+     $if(teaser)$
+        $teaser$
+        <a href="$url$">Read more</a>
+      $else$
+        $body$
+      $endif$
+<hr>
+$endfor$
+
+<ul>
+    $for(posts)$
+        <li>
+            <a href="$url$">$title$</a> - $author$ - $date$
+        </li>
+    $endfor$
+</ul>

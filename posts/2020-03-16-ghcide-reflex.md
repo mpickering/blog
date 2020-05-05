@@ -46,7 +46,7 @@ What did I imagine the primary benefits to this project would be?
 * Handlers for LSP requests can be written in the same language as the functions
   which computed the module graph.
 
-In short, I [now have an IDE](https://github.com/mpickering/ghcide/tree/reflex) which works and is completely implemented using reflex
+In short, I [now have an IDE](https://github.com/mpickering/ghcide-reflex/tree/reflex) which works and is completely implemented using reflex
 which gives you a point to be able to evaluate the costs and benefits to both approaches.
 
 In this post I will describe some of the basic abstractions which I implemented
@@ -430,7 +430,7 @@ where there where some variables were mutated in the handlers and the whole shak
 graph invalidated.
 
 Note: The way this handler record is constructed by leveraging the `barbies` library
-is [interesting](https://github.com/mpickering/ghcide/blob/reflex/src/Development/IDE/Core/Reflex/Service.hs#L257) in its own right.
+is [interesting](https://github.com/mpickering/ghcide-reflex/blob/reflex/src/Development/IDE/Core/Reflex/Service.hs#L257) in its own right.
 
 # Evaluation
 
@@ -503,7 +503,7 @@ a Haskell IDE. I'm looking forward to rewriting an IDE again next year.
 
 ## Related Links
 
-* [Project Branch](https://github.com/mpickering/ghcide/tree/reflex)
+* [Project Branch](https://github.com/mpickering/ghcide-reflex)
 * [Anders Hejlsberg on Modern Compiler Construction](https://channel9.msdn.com/Blogs/Seth-Juarez/Anders-Hejlsberg-on-Modern-Compiler-Construction)
 * [Responsive compilers - Nicholas Matsakis - PLISS 2019](https://www.youtube.com/watch?v=N6b44kMS6OM)
 * [Reddit discussion](https://www.reddit.com/r/haskell/comments/fjq4c2/an_ide_implemented_using_reflex/)

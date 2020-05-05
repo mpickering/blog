@@ -2,6 +2,10 @@
 title: Publications
 ---
 
+# Drafts
+
+* A Specification for Typed Template Haskell. Matthew Pickering, Andres Löh, Nicolas Wu. In submission 2020 ([PDF](papers/specification-typed-th.pdf))
+
 # Publications
 
 [Google Scholar](https://scholar.google.com/citations?user=nRJGAIYAAAAJ&hl=en)

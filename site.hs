@@ -120,7 +120,7 @@ main = hakyll $ do
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
             >>= relativizeUrls
 
-    match "ide/posts.html" $ do
+    match "ide/index.html" $ do
         route idRoute
         compile $ do
             posts <- recentFirst =<< loadAllSnapshots "ide/posts/*" "content"

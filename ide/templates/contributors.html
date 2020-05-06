@@ -1,7 +1,12 @@
-<ul>
+<p>Here are some of the people making it happen:</p>
+<div class="card-deck">
 $for(person)$
-  <li>
-    $name$ - <a href="http://github.com/$gh$">&#64;$gh$</a>
-  </li>
+  <div class="card">
+    <img class="card-img-top" src="/ide/images/$gh$.png" alt="$name$">
+    <div class="card-body">
+      <h5>$name$</h5>
+      <p><a href="http://github.com/$gh$">&#64;$gh$</a></p>
+    </div>
+  </div>
 $endfor$
-<ul>
+</div>

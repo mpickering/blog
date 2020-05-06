@@ -2,6 +2,26 @@
   margin-top: 10px;
 }
 
+.ide-nav {
+  margin-top: 1em;
+  border-top: 1px solid rgba(0,0,0,.1);
+}
+
+.logoandtext h2 {
+    font-weight: 700;
+    font-size: 50px;
+    display: inline-block;
+    vertical-align:top;
+}
+
+.logoandtext {
+  height: 50px;
+}
+
+.logoandtext img {
+    height: 50px;
+    vertical-align:middle;
+}
 
 #content {
   max-width: 800px;

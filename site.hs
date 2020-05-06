@@ -19,6 +19,9 @@ main = hakyll $ do
     match "images/*" $ do
         route   idRoute
         compile copyFileCompiler
+    match "ide/images/*" $ do
+        route   idRoute
+        compile copyFileCompiler
 
     match "papers/*" $ do
         route   idRoute

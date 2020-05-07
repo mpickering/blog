@@ -27,7 +27,7 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
-        BRANCH: test-docs
+        BRANCH: master
         FOLDER: build-folder
         REPOSITORY_NAME: mpickering/mpickering.github.io
         ACCESS_TOKEN: ${{ secrets.GH_SECRET }}

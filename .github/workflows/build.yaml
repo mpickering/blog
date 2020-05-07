@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+          persist-credentials: false
     - uses: cachix/install-nix-action@v8
     - uses: cachix/cachix-action@v6
       with:
@@ -14,7 +16,7 @@ jobs:
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
     - run: nix-build site.nix
     - name: Deploy to GitHub Pages
-      uses: mpickering/github-pages-deploy-action@dev
+      uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
         BRANCH: test-docs
         FOLDER: result

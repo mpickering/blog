@@ -13,3 +13,13 @@ jobs:
         # Only needed for private caches
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
     - run: nix-build site.nix
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@3.4.9
+      with:
+        ACCESS_TOKEN: '${{ secrets.GH_ACCESS }}'
+        BRANCH: test-docs
+        FOLDER: _site
+        REPOSITORY_NAME: mpickering/mpickering.github.io
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+

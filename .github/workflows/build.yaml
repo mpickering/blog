@@ -21,7 +21,7 @@ jobs:
     # This stuff is only to avoid the deployment crashing when it
     # tries to remove files
     - run: mkdir -p build-folder
-    - run: cp result/* build-folder
+    - run: cp -r result/* build-folder
     - run: find build-folder -type d -exec chmod 755 {} \;
     - run: find build-folder -type f -exec chmod 644 {} \;
     - name: Deploy to GitHub Pages

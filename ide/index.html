@@ -1,0 +1,30 @@
+
+<p>On this minisite you can keep track of our progress improving Haskell's interactive
+editing experience. Each Friday we'll post a new update about what
+has been going on. </p>
+
+<h3>Latest Post</h3>
+
+
+$for(posts-show)$
+<h4> $title$ </h4>
+<p class="text-muted">
+    Posted on $date$ by <a href="https://github.com/$github$">$author$</a>
+    <span class="avatar"><img src="/ide/images/$github$.png"/></span>
+</p>
+     $if(teaser)$
+        $teaser$
+        <a href="$url$">Read more</a>
+      $else$
+        $body$
+      $endif$
+<hr>
+$endfor$
+
+<ul>
+    $for(posts)$
+        <li>
+            <a href="$url$">$title$</a> - $author$ - $date$
+        </li>
+    $endfor$
+</ul>

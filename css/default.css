@@ -26,6 +26,11 @@
   height: 50px;
 }
 
+.avatar img {
+  height: 1.5em;
+  vertical-align:middle;
+}
+
 .logoandtext img {
     height: 50px;
     vertical-align:middle;

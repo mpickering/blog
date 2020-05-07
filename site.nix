@@ -11,7 +11,7 @@ let
   nixpkgs = import nixpkgsSrc {};
 
   ghc = nixpkgs.haskell.packages.ghc822.ghcWithPackages (ps: with ps;
-        [ ps.hakyll ps.random-shuffle
+        [ ps.hakyll ps.random-shuffle ps.split
         ]);
 
   generator =

@@ -9,7 +9,7 @@ import qualified Data.Set as S
 import Hakyll.Core.Compiler.Internal
 import Debug.Trace
 import System.Random.Shuffle
-
+import Data.List.Split
 
 --------------------------------------------------------------------------------
 main :: IO ()
@@ -84,12 +84,10 @@ main = hakyll $ do
     create ["ide/contributors.html"] $ do
         route idRoute
         compile $ do
-            raw_contribs <- compilerUnsafeIO $ shuffleM =<< (map (break (== ',')) . lines <$> readFile "ide/contributors.csv")
-
-            let contribCtx = (field "name" $ \item -> return (fst (itemBody item))) `mappend`
-                             (field "gh" $ \item -> return (tail (snd (itemBody item))))
+            let contribCtx = (field "name" $ \item -> return (name (itemBody item))) `mappend`
+                             (field "gh" $ \item -> return (gh  (itemBody item)))
             let archiveCtx =
-                    listField "person" contribCtx (mapM makeItem raw_contribs) `mappend`
+                    listField "person" contribCtx loadContribs `mappend`
                     defaultContext
 
             makeItem ""
@@ -106,7 +104,7 @@ main = hakyll $ do
           fmap (writePandocWith mathOpts) (getResourceBody
             >>= readPandocBiblio defaultHakyllReaderOptions csl bib)
             >>= saveSnapshot "content"
-            >>= loadAndApplyTemplate "templates/post.html"    postCtx
+            >>= loadAndApplyTemplate "ide/templates/post.html"postCtx
             >>= loadAndApplyTemplate "ide/templates/ide.html" postCtx
             >>= saveSnapshot "rss"
             >>= loadAndApplyTemplate "templates/default.html" postCtx
@@ -148,6 +146,18 @@ main = hakyll $ do
         renderAtom feedConfig feedCtx posts
 
 
+data Contrib = Contrib { name :: String, gh :: String } deriving Show
+
+loadContribs :: Compiler ([Item Contrib])
+loadContribs = do
+  csv_item <- compilerUnsafeIO (readFile  "ide/contributors.csv")
+  items <- traverse (makeItem . parseRow) (lines csv_item)
+  compilerUnsafeIO $ shuffleM items
+
+  where
+    parseRow s = Contrib name gh
+      where
+        [name, gh] = splitOn "," s
 --------------------------------------------------------------------------------
 postCtx :: Context String
 postCtx =

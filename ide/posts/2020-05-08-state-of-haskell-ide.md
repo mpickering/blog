@@ -64,24 +64,25 @@ messages are received back. It can also be used to recreate certain
 scenarios: [useful for hunting down memory
 leaks](https://lukelau.me/haskell/posts/leak/).
 
-### haskell-ide-engine
-The [haskell-ide-engine](https://github.com/haskell/haskell-ide-engine) is a
-language server that faithfully served as a focal point for a whole suite of
-tools. It's been a relatively long-running project: It predates the existence of
-LSP! It originally used ghc-mod as its backend before switching to
-hie-bios, and it provides a bunch of logic for extracting code completion and
-symbols etc. out of the GHC API that eventually got absorbed into ghcide.
-It also has a plugin system which allows external
-tools to easily interface with LSP. So built into HIE, Floskell, Ormolu and
-Brittany can provide formatting whilst GHC, Liquid Haskell and HLint provide
-diagnostics, all through the same interface.
-
 ### GHC `.hie` files
 A lot of the work on ghcide and haskell-ide-engine has driven new features and functionality upstream into GHC.
 One such example is [`.hie` files](https://www.haskell.org/ghc/blog/20190626-HIEFiles.html). These are generated with the `-fwrite-ide-flag` during  compilation, and like a `.hi` file they contain additional information about some compiled module. However `.hie` files contain lots of information specifically useful for tooling, such as the type of expressions or where things are defined, hence the acronym for *haskell information extended* --- not to be
 confused with haskell-ide-engine!
 Work is underway to use these files in ghcide to provide much more accurate code
 navigation, completion and type definitions.
+
+### haskell-ide-engine
+The [haskell-ide-engine](https://github.com/haskell/haskell-ide-engine) is a
+language server that faithfully served as a focal point for a whole suite of
+tools.
+It's been a relatively long-running project: It predates the existence of
+LSP!
+It originally used ghc-mod as its backend before switching to hie-bios, and it provides a bunch of logic for extracting code completion and
+symbols etc. out of the GHC API that eventually got absorbed into ghcide.
+It also has a plugin system which allows external
+tools to easily interface with LSP. So built into HIE, Floskell, Ormolu and
+Brittany can provide formatting whilst GHC, Liquid Haskell and HLint provide
+diagnostics, all through the same interface.
 
 ### haskell-language-server
 [haskell-language-server](https://github.com/haskell/haskell-language-server) now aims to concentrate the efforts behind ghcide and
@@ -92,6 +93,9 @@ want to use for each job. Floskell for formatting, or Ormolu?
 And more importantly, because it builds upon so many components,
 haskell-language-server will receive any improvements made downstream. This
 division of labour allows contributors to focus on the individual problems that need tackled, whilst benefiting the whole ecosystem.
+
+Ultimately this means that **haskell-ide-engine is being sunset and users should eventually move to haskell-language-server** when it is ready.
+**ghcide will continue to be developed** and will serve as the underlying backend that powers haskell-language-server.
 
 ### Looking forward
 We are now entering the *renaissance* of Haskell tooling. This summer

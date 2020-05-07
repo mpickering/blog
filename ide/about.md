@@ -5,10 +5,14 @@ of [`ghcide`](https://github.com/digital-asset/ghcide) we are building [`haskell
 We are focused on building a robust IDE experience which works on any Haskell project,
 built with any build system and of any size.
 
+<p align="center">
+![An overview of the current ecosystem](/ide/images/tooling-graph.png){ width=400px }
+</p>
+
 ## How to get involved?
 
 If you want to get involved the best way is to come and chat to us in the
-#haskell-ide-engine IRC channel on Freenode. There's still plenty of rough
+[\#haskell-ide-engine](irc://irc.freenode.net/haskell-ide-engine) IRC channel on Freenode. There's still plenty of rough
 edges and there is a strong community of developers of different experience levels
 to help and mentor any new contributors.
 

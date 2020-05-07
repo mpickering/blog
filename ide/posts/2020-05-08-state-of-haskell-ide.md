@@ -2,7 +2,7 @@
 title: The State of Haskell IDE
 author: Luke Lau
 date: 2020-05-08
-github: lukelau
+github: bubba
 ---
 
 It is an exciting time for Haskell tooling. As many might be aware, the past
@@ -20,11 +20,12 @@ whole ecosystem of tools to drive all of the underlying IDE features. How they
 all interconnect can be a bit overwhelming at first, so this post will break it
 down and take a look at them individually.
 
-<!--more-->
 
 <p align="center">
 ![An overview of the current ecosystem](/ide/images/tooling-graph.png){ width=400px }
 </p>
+
+<!--more-->
 
 ### ghcide
 Powering the language server under the hood is
@@ -107,6 +108,9 @@ And [Michalis Pardalos](https://github.com/mpardalos) is integrating
 can
 instrument and profile how they perform on the vast heterogeneous array of LSP clients that they
 may be used with.
+
+By the end of the summer we will have built a robust language server which works
+on any Haskell project of any size and built with any build system.
 
 There are a lot of exciting projects in the pipeline, and we will
 be posting about them here every Friday. In the meantime, come chat with us over at

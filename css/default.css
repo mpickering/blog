@@ -29,6 +29,8 @@
 .avatar img {
   height: 1.5em;
   vertical-align:middle;
+  border: 1px solid #bfbfbf;
+  margin-left: 1px;
 }
 
 .logoandtext img {

@@ -3,14 +3,14 @@
 editing experience. Each Friday we'll post a new update about what
 has been going on. </p>
 
-<h3>Latest Post</h3>
+<hr>
 
 
 $for(posts-show)$
 <h4> $title$ </h4>
 <p class="text-muted">
-    Posted on $date$ by <a href="https://github.com/$github$">$author$</a>
-    <span class="avatar"><img src="/ide/images/$github$.png"/></span>
+    Posted on $date$ by <a href="https://github.com/$github$">$author$
+      <span class="avatar"><img src="/ide/images/$github$.png"/></span></a>
 </p>
      $if(teaser)$
         $teaser$

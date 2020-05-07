@@ -5,6 +5,7 @@ build-depends: base >= 4
              , random-shuffle
              , containers
              , pandoc
+             , split
 -}
 
 --------------------------------------------------------------------------------

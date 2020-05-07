@@ -17,7 +17,7 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@3.4.9
       with:
         BRANCH: test-docs
-        FOLDER: _site
+        FOLDER: result
         REPOSITORY_NAME: mpickering/mpickering.github.io
         ACCESS_TOKEN: ${{ secrets.GH_SECRET }}
 

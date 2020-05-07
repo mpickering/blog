@@ -70,7 +70,8 @@ language server that faithfully served as a focal point for a whole suite of
 tools. It's been a relatively long-running project: It predates the existence of
 LSP! It originally used ghc-mod as its backend before switching to
 hie-bios, and it provides a bunch of logic for extracting code completion and
-symbols etc. out of the GHC API.  It also has a plugin system which allows external
+symbols etc. out of the GHC API that eventually got absorbed into ghcide.
+It also has a plugin system which allows external
 tools to easily interface with LSP. So built into HIE, Floskell, Ormolu and
 Brittany can provide formatting whilst GHC, Liquid Haskell and HLint provide
 diagnostics, all through the same interface.

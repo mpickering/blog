@@ -14,7 +14,7 @@ jobs:
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
     - run: nix-build site.nix
     - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@3.4.9
+      uses: mpickering/github-pages-deploy-action@dev
       with:
         BRANCH: test-docs
         FOLDER: result

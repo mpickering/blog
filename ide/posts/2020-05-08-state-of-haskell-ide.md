@@ -46,7 +46,7 @@ However this can get fairly complicated and hairy quickly.
 haskell-ide-engine and haskell-language-server use [cabal-helper](https://github.com/DanielG/cabal-helper.git) to query more information about your project to help with this.
 
 ### haskell-lsp
-haskell-lsp provides the transport between the client
+[haskell-lsp](https://github.com/alanz/haskell-lsp) provides the transport between the client
 and the server using the Language Server Protocol. It keeps track of a lot of
 bookkeeping within the protocol, like request IDs and client/server
 capabilities, and also provides a virtual file system that mirrors edits coming

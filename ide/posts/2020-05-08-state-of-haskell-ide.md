@@ -90,11 +90,25 @@ And more importantly, because it builds upon so many components,
 haskell-language-server will receive any improvements made downstream. This
 division of labour allows contributors to focus on the individual problems that need tackled, whilst benefiting the whole ecosystem.
 
+### Looking forward
 We are now entering the *renaissance* of Haskell tooling. This summer
 there are 3 Google Summer of Code projects and a Tweag open source fellowship
 all working on tooling, as well as the continued efforts of many contributors.
-There are a lot of exciting features and projects in the pipeline, and we will
-be posting about them here every Friday. Come chat with us over at
+
+[Fendor](https://github.com/fendor) is working on supporting compilation of multiple *home-packages* at
+once within GHC. In short this will allow tooling to work with multiple
+components inside a package simultaneously. [Luke Lau](http://github.com/bubba) (that's me) is improving the
+implicit discovery of cradles in hie-bios by connecting together the [Cabal
+`show-build-info` command](), which will give a much more reliable Cabal setup
+in the absence of `hie.yaml` files. [Zubin Duggal](http://github.com/wz1000) will be focusing on the haskell-language-server, fleshing out its features and taking advantage of GHC's `.hie` files.
+And [Michalis Pardalos](https://github.com/mpardalos) is integrating
+[OpenTelemetry](https://opentelemetry.io) with the language servers, so that we
+can
+instrument and profile how they perform on the vast heterogeneous array of LSP clients that they
+may be used with. 
+
+There are a lot of exciting projects in the pipeline, and we will
+be posting about them here every Friday. In the meantime, come chat with us over at
 [\#haskell-ide-engine](irc://irc.freenode.net/haskell-ide-engine) on Freenode, clone some projects and help us build the
 ultimate Haskell IDE.
 

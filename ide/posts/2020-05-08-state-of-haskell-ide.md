@@ -4,8 +4,6 @@ author: Luke Lau
 date: 2020-05-08
 ---
 
-<!--more-->
-
 It is an exciting time for Haskell tooling. As many might be aware, the past
 year has seen a number of significant changes to the ecosystem, with one of the
 most noticeable ones being [the marriage of ghcide and haskell-ide-engine](https://neilmitchell.blogspot.com/2020/01/one-haskell-ide-to-rule-them-all.html). We now
@@ -17,8 +15,11 @@ navigation and more, works with both your Cabal and Stack projects, and scales
 from tiny scripts all the way up to huge codebases like GHC.
 
 *haskell-language-server* does not do this on its own however. It builds upon a
-whole ecosystem of tools to drive all of the underlying IDE features, which we
-will take a look at today.
+whole ecosystem of tools to drive all of the underlying IDE features. How they
+all interconnect can be a bit overwhelming at first, so this post will break it
+down and take a look at them individually.
+
+<!--more-->
 
 <p align="center">
 ![An overview of the current ecosystem](/ide/images/tooling-graph.png){ width=400px }
@@ -93,7 +94,7 @@ We are now entering the *renaissance* of Haskell tooling. This summer
 there are 3 Google Summer of Code projects and a Tweag open source fellowship
 all working on tooling, as well as the continued efforts of many contributors.
 There are a lot of exciting features and projects in the pipeline, and we will
-be posting about them here every Friday. Come chat to us over at
-\#haskell-ide-engine on Freenode, clone some projects and help us build the
+be posting about them here every Friday. Come chat with us over at
+[\#haskell-ide-engine](irc://irc.freenode.net/haskell-ide-engine) on Freenode, clone some projects and help us build the
 ultimate Haskell IDE.
 

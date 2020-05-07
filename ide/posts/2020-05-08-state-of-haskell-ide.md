@@ -2,6 +2,7 @@
 title: The State of Haskell IDE
 author: Luke Lau
 date: 2020-05-08
+github: lukelau
 ---
 
 It is an exciting time for Haskell tooling. As many might be aware, the past
@@ -105,7 +106,7 @@ And [Michalis Pardalos](https://github.com/mpardalos) is integrating
 [OpenTelemetry](https://opentelemetry.io) with the language servers, so that we
 can
 instrument and profile how they perform on the vast heterogeneous array of LSP clients that they
-may be used with. 
+may be used with.
 
 There are a lot of exciting projects in the pipeline, and we will
 be posting about them here every Friday. In the meantime, come chat with us over at

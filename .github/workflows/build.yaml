@@ -8,7 +8,7 @@ jobs:
     - uses: cachix/install-nix-action@v8
     - uses: cachix/cachix-action@v6
       with:
-        name: mycache
+        name: mpickering
         signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
         # Only needed for private caches
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'

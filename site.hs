@@ -1,3 +1,12 @@
+#!/usr/bin/env cabal -wghc-8.8.3 run
+{- cabal:
+build-depends: base >= 4
+             , hakyll
+             , random-shuffle
+             , containers
+             , pandoc
+-}
+
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Monoid (mappend)

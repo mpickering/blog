@@ -106,7 +106,7 @@ all working on tooling, as well as the continued efforts of many contributors.
 once within GHC. In short this will allow tooling to work with multiple
 components inside a package simultaneously. [Luke Lau](http://github.com/bubba) (that's me) is improving the
 implicit discovery of cradles in hie-bios by connecting together the [Cabal
-`show-build-info` command](), which will give a much more reliable Cabal setup
+`show-build-info` command](https://github.com/haskell/cabal/pull/6241), which will give a much more reliable Cabal setup
 in the absence of `hie.yaml` files. [Zubin Duggal](http://github.com/wz1000) will be focusing on the haskell-language-server, fleshing out its features and taking advantage of GHC's `.hie` files.
 And [Michalis Pardalos](https://github.com/mpardalos) is integrating
 [OpenTelemetry](https://opentelemetry.io) with the language servers, so that we

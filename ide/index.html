@@ -24,7 +24,9 @@ $endfor$
 <ul>
     $for(posts)$
         <li>
-            <a href="$url$">$title$</a> - $author$ - $date$
+            <a href="$url$">$title$</a> - $date$ -
+            <a href="https://github.com/$github$">$author$</a>
+            <span class="avatar"><img src="/ide/images/$github$.png"/></span>
         </li>
     $endfor$
 </ul>

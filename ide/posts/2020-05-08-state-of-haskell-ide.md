@@ -116,7 +116,7 @@ may be used with.
 
 By the end of the summer we will have built a robust language server which works
 on any Haskell project of any size and built with any build system.
-We would love to keep this momentum going after the summer, so we have set up an [Open Collective](https://opencollective.com/haskell-language-server):
+We would love to keep this momentum going afterwards, **so we have set up an [Open Collective](https://opencollective.com/haskell-language-server)**:
 a transparent way to fund further development within the Haskell tooling ecosystem and bring in more contributors.
 The ecosystem has always and will always be community-driven, and we think that this will benefit everyone by enabling contributors, old and new, to work on the most requested features.
 

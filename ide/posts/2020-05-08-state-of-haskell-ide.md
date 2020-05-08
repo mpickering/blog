@@ -119,6 +119,7 @@ on any Haskell project of any size and built with any build system.
 We would love to keep this momentum going afterwards, **so we have set up an [Open Collective](https://opencollective.com/haskell-language-server)**:
 a transparent way to fund further development within the Haskell tooling ecosystem and bring in more contributors.
 The ecosystem has always and will always be community-driven, and we think that this will benefit everyone by enabling contributors, old and new, to work on the most requested features.
+You can read more about this on the [funding page](/ide/funding.html).
 
 There are a lot of exciting projects in the pipeline, and we will
 be posting about them here every Friday. In the meantime, come chat with us over at

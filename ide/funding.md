@@ -1,7 +1,7 @@
 
 ## How can I contribute financially to the project?
 
-We have set up an [open collective](https://opencollective.com/haskell-language-server) in order to take donations directly from the community. This will create
+We have set up an [Open Collective](https://opencollective.com/haskell-language-server) in order to take donations directly from the community. This will create
 a more sustainable income stream than one-off yearly investments from Google.
 
 <script src="https://opencollective.com/haskell-language-server/contribute/button.js" color="white"></script>

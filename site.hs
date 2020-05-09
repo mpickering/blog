@@ -121,7 +121,9 @@ main = hakyll $ do
             >>= relativizeUrls
 
 
-    match (fromList ["ide/about.md", "ide/funding.md"]) $ do
+    match (fromList ["ide/about.md"])
+                    --, "ide/funding.md"])
+                    $ do
         route   $ setExtension "html"
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "ide/templates/ide.html" defaultContext

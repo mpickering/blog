@@ -5,9 +5,6 @@ of [`ghcide`](https://github.com/digital-asset/ghcide) we are building [`haskell
 We are focused on building a robust IDE experience which works on any Haskell project,
 built with any build system and of any size.
 
-If you want to contribute financially to the project then you can to our
-[Open Collective](https://opencollective.com/haskell-language-server).
-
 <p align="center">
 ![An overview of the current ecosystem](/ide/images/tooling-graph.png){ width=400px }
 </p>

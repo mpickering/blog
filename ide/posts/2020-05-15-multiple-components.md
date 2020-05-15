@@ -87,7 +87,7 @@ As an interesting side-note, the completion system of ghcide is almost the same 
 
 A particularly nasty bug occured when cached interface files were out of sync.
 The details of how a project is loaded are described later, but for now it suffices to know that packages are loaded only if one of its modules is loaded.
-If multiple packages are loaded into the same Language Server session, the cached interface files reflect that fact. This does not cause any problem in the same session, but if it is restarted and a single package loaded, the cache files still try to refer to the package that is not currently loaded. This leads to the  whole session not being able to be loaded correctly and then displaying a sea of read squiggly lines until the previous session state is restored, e.g. other packages are loaded into the IDE.
+If multiple packages are loaded into the same Language Server session, the cached interface files reflect that fact. This does not cause any problem in the same session, but if it is restarted and a single package loaded, the cache files still try to refer to the package that is not currently loaded. This leads to the  whole session not being able to be loaded correctly and then displaying a sea of red squiggly lines until the previous session state is restored, e.g. other packages are loaded into the IDE.
 
 This is obviously not the desired behaviour and, luckily, the fix was rather simple: We needed to isolate the cached interface files based on the packages that were currently loaded!
 This means that we maintain a set of cached interface files for every subset of loaded local packages. To illustrate this, imagine you have three packages A, B and C.

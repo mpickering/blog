@@ -42,7 +42,7 @@ But this is bound to change soon! Zubin Duggal developed a working implementatio
 
 Below is a working example of how these HIE files can be used:
 
-[![Find References](https://s6.gifyu.com/images/References.gif){width = 100%}](https://gifyu.com/image/nkzg)
+[![Find References](https://s6.gifyu.com/images/References.gif){width=100%}](https://gifyu.com/image/nkzg)
 
 It allows developers to look for all usages of a function or type and to see all usages of a parameter or definition within a function!
 

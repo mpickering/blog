@@ -1,5 +1,5 @@
 ---
-title: Multiple Components
+title: Weekly Update and Multiple Components
 author: Fendor
 date: 2020-05-15
 github: fendor
@@ -7,27 +7,42 @@ github: fendor
 
 This is the second blog post in this year's series of IDE blog posts. In this blog post I will first present the progress we made during the last week, what we have been working on, what has been implemented, and what has been fixed. In the second section I will give some insights on why Haskell IDE Engine is in the retirement process. It explains the shortcomings of its structure and why ghcide supersedes it. In the last section, I will explain the motivation for implementing multiple home packages for GHC and how it, hopefully, will benefit IDEs and every-day users of GHC.
 
+![Jump to Instance Definition](/ide/images/JumpToInstance.gif){ width=100% }
+
+<!--more-->
+
 ## This week
 
 A week has passed since the introduction to the state of IDEs in Haskell. A lot has happened in this one week and I am here to tell you about a few things in detail!
 
 ### Support for GHC 8.10.1
 
-Maintaining an IDE is a lot of work and we couldn't do it without the work of volunteers. Part of the maintenance work is updating dependencies and fixing any errors that might occur! This week, as during countless weeks before that, Javier Neira (\@jneira) took care of a lot of maintenance work such as responding to issues, fixing bugs and updating Haskell Language Server to be compatible with GHC 8.10.1!
-Updating Haskell Language Server to support a new GHC version is a huge effort, as it has plenty of dependencies and all of these need to be updated in order to support the newer version.
+Maintaining an IDE is a lot of work and we couldn't do it without the work of
+volunteers. Part of the maintenance work is updating dependencies and fixing
+any errors that might occur! This week, as during countless weeks before that,
+Javier Neira (\@jneira) took care of a lot of maintenance work such as
+responding to issues, fixing bugs and updating Haskell Language Server to be
+compatible with GHC 8.10.1!  Updating Haskell Language Server to support a new
+GHC version is a huge effort, as it has plenty of dependencies and all of these
+need to be updated in order to support the newer version.
 
 ### References
 
 **Disclaimer**
 This feature hasn't been merged, yet, due to issues with older GHC versions.
 
-Modern IDEs need to be capable of showing you all references to a function, where it is implemented and intelligent code search in general. It should not be necessary to query the function name throughout the whole project to find the implementation. While code-actions such as "Go to Definition" and "Go to Type Definition" have been working for some time now, searching for all references of an identifier has not been implemented as of yet.
+Modern IDEs need to be capable of showing you all references to a function,
+where it is implemented and intelligent code search in general. It should not
+be necessary to query the function name throughout the whole project to find
+the implementation. While code-actions such as "Go to Definition" and "Go to
+Type Definition" have been working for some time now, searching for all
+references of an identifier has not been implemented as of yet.
 
 But this is bound to change soon! Zubin Duggal developed a working implementation of finding references in a project based on [hiedb](https://github.com/wz1000/hiedb). `hiedb` is powered by [HIE](https://gitlab.haskell.org/ghc/ghc/-/wikis/hie-files) files, which are basically very verbose compiler artefacts that can be used to query references, the type of an expression, and a lot of other things (see projects such as [weeder](https://hackage.haskell.org/package/weeder)).
 
-Below is a working example of how these HIE files can be used and how they will improve the developer experience!
+Below is a working example of how these HIE files can be used:
 
-![Lookup References](/ide/images/References.gif){ width=100% }
+[![References.gif](https://s6.gifyu.com/images/References.gif){width=100%}](https://gifyu.com/image/nkzg)
 
 It allows developers to look for all usages of a function or type and to see all usages of a parameter or definition within a function!
 
@@ -36,13 +51,18 @@ It allows developers to look for all usages of a function or type and to see all
 **Disclaimer**
 This feature is not yet merged into GHC, but will probably ship with GHC 8.12.
 
-It is well known that you can jump to function definitions in Haddock. For functions that are part of a type-class, you jump to the definition in the type-class. However, that is usually not what you want.
-Thus, Zubin Duggal has implemented a new feature that will allow you to jump to the function definition of a type-class depending on the instance!
+It is well known that you can jump to function definitions in Haddock. For
+functions that are part of a type-class, you jump to the
+type-class declaration. However, that is usually not what you want.  Thus, Zubin Duggal has
+implemented a new feature that will allow you to jump to the specific instance
+definition used by an overloaded function.
 
 ![Jump to Instance Definition](/ide/images/JumpToInstance.gif){ width=100% }
 
 This is a really useful feature and will make it easier to explore a code base!
-Moreover, it can make the IDE experience smoother for developers.
+Moreover, it can make the IDE experience smoother for developers. LSP supports
+returning multiple locations for go-to definition requests which we could exploit
+to give the user a choice about where to jump to.
 
 ### First step towards `Open Telemetry` support
 

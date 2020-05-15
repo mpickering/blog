@@ -42,7 +42,7 @@ But this is bound to change soon! Zubin Duggal developed a working implementatio
 
 Below is a working example of how these HIE files can be used:
 
-[![Find References](https://s6.gifyu.com/images/References.gif){width=100%}](https://gifyu.com/image/nkzg)
+[![Find References](https://s6.gifyu.com/images/References.gif)](https://gifyu.com/image/nkzg)
 
 It allows developers to look for all usages of a function or type and to see all usages of a parameter or definition within a function!
 
@@ -57,7 +57,7 @@ type-class declaration. However, that is usually not what you want.  Thus, Zubin
 implemented a new feature that will allow you to jump to the specific instance
 definition used by an overloaded function.
 
-[![Jump To Instance Definition](https://s6.gifyu.com/images/JumpToInstance.gif){ width = 100% }](https://gifyu.com/image/nkjS)
+[![Jump To Instance Definition](https://s6.gifyu.com/images/JumpToInstance.gif)](https://gifyu.com/image/nkjS)
 
 This is a really useful feature and will make it easier to explore a code base!
 Moreover, it can make the IDE experience smoother for developers. LSP supports

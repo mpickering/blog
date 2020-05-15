@@ -7,7 +7,7 @@ github: fendor
 
 This is the second blog post in this year's series of IDE blog posts. In this blog post I will first present the progress we made during the last week, what we have been working on, what has been implemented, and what has been fixed. In the second section I will give some insights on why Haskell IDE Engine is in the retirement process. It explains the shortcomings of its structure and why ghcide supersedes it. In the last section, I will explain the motivation for implementing multiple home packages for GHC and how it, hopefully, will benefit IDEs and every-day users of GHC.
 
-![Jump to Instance Definition](/ide/images/JumpToInstance.gif){ width=100% }
+[![Jump To Instance Definition](https://s6.gifyu.com/images/JumpToInstance.gif){ width = 100% }](https://gifyu.com/image/nkjS)
 
 <!--more-->
 
@@ -42,7 +42,7 @@ But this is bound to change soon! Zubin Duggal developed a working implementatio
 
 Below is a working example of how these HIE files can be used:
 
-[![References.gif](https://s6.gifyu.com/images/References.gif){width=100%}](https://gifyu.com/image/nkzg)
+[![Find References](https://s6.gifyu.com/images/References.gif){width=100%}](https://gifyu.com/image/nkzg)
 
 It allows developers to look for all usages of a function or type and to see all usages of a parameter or definition within a function!
 
@@ -57,7 +57,7 @@ type-class declaration. However, that is usually not what you want.  Thus, Zubin
 implemented a new feature that will allow you to jump to the specific instance
 definition used by an overloaded function.
 
-![Jump to Instance Definition](/ide/images/JumpToInstance.gif){ width=100% }
+[![Jump To Instance Definition](https://s6.gifyu.com/images/JumpToInstance.gif){ width = 100% }](https://gifyu.com/image/nkjS)
 
 This is a really useful feature and will make it easier to explore a code base!
 Moreover, it can make the IDE experience smoother for developers. LSP supports

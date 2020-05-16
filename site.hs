@@ -115,8 +115,8 @@ main = hakyll $ do
             >>= readPandocBiblio defaultHakyllReaderOptions csl bib)
             >>= saveSnapshot "content"
             >>= loadAndApplyTemplate "ide/templates/post.html"postCtx
-            >>= loadAndApplyTemplate "ide/templates/ide.html" postCtx
             >>= saveSnapshot "rss"
+            >>= loadAndApplyTemplate "ide/templates/ide.html" postCtx
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
 
@@ -157,6 +157,14 @@ main = hakyll $ do
         posts <- fmap (take 10) . recentFirst =<< loadAllSnapshots "posts/*" "rss"
         renderAtom feedConfig feedCtx posts
 
+    create ["ide/atom.xml"] $ do
+      route idRoute
+      compile $ do
+        let feedCtx = postCtx `mappend`
+                        bodyField "description"
+        posts <- fmap (take 10) . recentFirst =<< loadAllSnapshots "ide/posts/*" "rss"
+        renderAtom ideFeedConfig feedCtx posts
+
 
 data Contrib = Contrib { name :: String, gh :: String } deriving Show
 
@@ -183,6 +191,15 @@ feedConfig = FeedConfiguration
   , feedAuthorName = "Matthew Pickering"
   , feedAuthorEmail = "matthewtpickering@gmail.com"
   , feedRoot = "http://mpickering.github.io"
+  }
+
+ideFeedConfig :: FeedConfiguration
+ideFeedConfig = FeedConfiguration
+  { feedTitle = "IDE 2020 Updates"
+  , feedDescription = "Updates on Haskell IDE work taking place summer 2020"
+  , feedAuthorName = "Matthew Pickering"
+  , feedAuthorEmail = "matthewtpickering@gmail.com"
+  , feedRoot = "http://mpickering.github.io/ide"
   }
 
 teaserCtx :: Context String

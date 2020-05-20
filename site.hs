@@ -199,7 +199,7 @@ ideFeedConfig = FeedConfiguration
   , feedDescription = "Updates on Haskell IDE work taking place summer 2020"
   , feedAuthorName = "Matthew Pickering"
   , feedAuthorEmail = "matthewtpickering@gmail.com"
-  , feedRoot = "http://mpickering.github.io/ide"
+  , feedRoot = "http://mpickering.github.io/"
   }
 
 teaserCtx :: Context String

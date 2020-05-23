@@ -34,8 +34,8 @@ don't know or directly control which ones are running.
 
 Addressing this problem is the core of my Google Summer of Code project: I will
 be introducing tracing to ghcide. This essentially amounts to wrapping
-interesting sections of code in `print "begin <section>` and `print "end
-<section"`, albeit in a slightly more sophisticated way. This will allow us to
+interesting sections of code in `print "begin <section>"` and `print "end
+<section>"`, albeit in a slightly more sophisticated way. This will allow us to
 track which sections are running at any given time and for how long. I will be
 doing this using [opentelemetry](https://opentelemetry.io/) and Dmitry Ivanov's
 (\@ethercrow) `haskell-opentelemetry` library, allowing for better tooling
@@ -54,7 +54,7 @@ initial support for tracing allowing us to get some basic traces. What I will
 be adding is more detail. The way shake works is that you issue *Actions* to be
 run, which can then request data, which based on some rules is calculated using
 other Actions, etc. We can currently only trace the initial actions, not any of
-their dependencies. For example, we know can see how long going to definition
+their dependencies. For example, we now can see how long going to definition
 takes in its entirety, but not how much of that time was spent loading or
 parsing files. Adding this will give us a complete picture of what ghcide is
 doing.

@@ -11,6 +11,8 @@ tracing into ghcide* using OpenTelemetry. I will explain the motivation for
 this project and then explain what it actually entails, as well as what
 improvements you should expect to see as a result of it.
 
+![A ghcide trace viewed in chrome's about:tracing](/ide/images/trace-example.png){ width=100% }
+
 <!--more-->
 
 ### What is the problem?
@@ -54,7 +56,7 @@ initial support for tracing allowing us to get some basic traces. You can see an
 example of what is possible below:
 
 <p align="center">
-![A ghcide trace viewed in chrome's about:tracing](/ide/images/trace-example.png){ width=800px }
+![A ghcide trace viewed in chrome's about:tracing](/ide/images/trace-example.png){ width=100% }
 </p>
 
 This is a trace of ghcide running on GHC. Each bar represents a Shake Action,

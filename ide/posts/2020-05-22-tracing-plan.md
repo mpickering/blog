@@ -6,12 +6,14 @@ github: mpardalos
 ---
 
 Welcome to the third post on the ongoing work on a unified Haskell IDE. This
-week I will be talking about my Google Summer of Code project to _introduce
-tracing into ghcide* using OpenTelemetry. I will explain the motivation for this
-project and then explain what it actually entails, as well as what improvements
-you should expect to see as a result of it.
+week I will be talking about my Google Summer of Code project to *introduce
+tracing into ghcide* using OpenTelemetry. I will explain the motivation for
+this project and then explain what it actually entails, as well as what
+improvements you should expect to see as a result of it.
 
-# What is the problem?
+<!--more-->
+
+### What is the problem?
 
 The internal architecture of ghcide is based on the
 [Shake](https://shakebuild.com) build system. This is a tool similar in
@@ -28,11 +30,11 @@ changed and what is requested by the editor. This means that reasoning about
 performance becomes much harder. It's hard to tell what action is slow when you
 don't know or directly control which ones are running.
 
-# So what are you doing about it?
+### So what are you doing about it?
 
 Addressing this problem is the core of my Google Summer of Code project: I will
 be introducing tracing to ghcide. This essentially amounts to wrapping
-interesting sections of code in `print "begin <section>` and `print "end
+interesting sections of code in `print "begin <section>"` and `print "end
 <section>"`, albeit in a slightly more sophisticated way. This will allow us to
 track which sections are running at any given time and for how long. I will be
 doing this using [opentelemetry](https://opentelemetry.io/) and Dmitry Ivanov's
@@ -70,10 +72,26 @@ not how much of that time was spent loading or parsing files. Adding this will
 give us a complete picture of what ghcide is doing, and is what I will be adding
 to ghcide's tracing.
 
-# That's great and all, but what do I get?
+## That's great and all, but what do I get?
 
 Great question! Indeed, this is a developer-facing feature. We are not expecting
 users of ghcide to be looking at traces. We are hoping however it will guide us
 towards a faster ghcide by showing us what parts are worth improving. It should
 also make locating certain classes of bugs easier by showing us if Shake is
 doing what we are expecting it to.
+
+### Other Updates
+
+As always, we have all been working on other projects as well this week.
+
+* Luke Lau has been [implementing support](https://gitlab.haskell.org/ghc/ghc/-/merge_requests/3330) for adding haddock documentation to
+  functions using template-haskell to resolve a long standing GHC ticket.
+* Fendor submitted his first [GHC patch](https://gitlab.haskell.org/ghc/ghc/-/merge_requests/3327) getting up to speed for the summer's project.
+* Matthew Pickering has been finishing off the [multi component patch](https://github.com/digital-asset/ghcide/pull/522) with
+  the careful review of Moritz and Pepe. It looks like it will be merged within
+  the next week.
+* Avi Dessauer released the first version of [implicit-hie](https://hackage.haskell.org/package/implicit-hie) which
+  attempts to generate hie.yaml files for you.
+* Zubin Duggal has continued working on integrating hie files into his fork of ghcide. You
+  can read more about this in Zubin's blog post next week.
+

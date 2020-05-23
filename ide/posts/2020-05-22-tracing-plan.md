@@ -11,7 +11,9 @@ tracing into ghcide* using OpenTelemetry. I will explain the motivation for
 this project and then explain what it actually entails, as well as what
 improvements you should expect to see as a result of it.
 
-# What is the problem?
+<!--more-->
+
+### What is the problem?
 
 The internal architecture of ghcide is based on the
 [Shake](https://shakebuild.com) build system. This is a tool similar in
@@ -28,7 +30,7 @@ changed and what is requested by the editor. This means that reasoning about
 performance becomes much harder. It's hard to tell what action is slow when you
 don't know or directly control which ones are running.
 
-# So what are you doing about it?
+### So what are you doing about it?
 
 Addressing this problem is the core of my Google Summer of Code project: I will
 be introducing tracing to ghcide. This essentially amounts to wrapping
@@ -57,7 +59,7 @@ takes in its entirety, but not how much of that time was spent loading or
 parsing files. Adding this will give us a complete picture of what ghcide is
 doing.
 
-# That's great and all, but what do I get?
+### That's great and all, but what do I get?
 
 Great question! Indeed, this is a developer-facing feature. We are not
 expecting users of ghcide to be looking at traces. We are hoping however it
@@ -65,7 +67,7 @@ will guide us towards a faster ghcide by showing us what parts are worth
 improving. It should also make locating certain classes of bugs easier by
 showing us if Shake is doing what we are expecting it to.
 
-# Other Updates
+### Other Updates
 
 As always, we have all been working on other projects as well this week.
 

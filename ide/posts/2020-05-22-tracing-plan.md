@@ -1,5 +1,5 @@
 ---
-title: Adding tracing to ghcide
+posttitle: Adding tracing to ghcide
 author: Michalis Pardalos
 date: 2020-05-22
 github: mpardalos

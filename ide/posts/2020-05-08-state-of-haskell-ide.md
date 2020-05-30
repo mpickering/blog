@@ -1,5 +1,5 @@
 ---
-title: The State of Haskell IDEs
+posttitle: The State of Haskell IDEs
 author: Luke Lau
 date: 2020-05-08
 github: bubba

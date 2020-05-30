@@ -7,7 +7,7 @@ has been going on. </p>
 
 
 $for(posts-show)$
-<h4> <a href="$url$">$title$</a> </h4>
+<h4> <a href="$url$">$posttitle$</a> </h4>
 <p class="text-muted">
     Posted on $date$ by <a href="https://github.com/$github$">$author$
       <span class="avatar"><img src="/ide/images/$github$.png"/></span></a>
@@ -24,7 +24,7 @@ $endfor$
 <ul>
     $for(posts)$
         <li>
-            <a href="$url$">$title$</a> - $date$ -
+            <a href="$url$">$posttitle$</a> - $date$ -
             <a href="https://github.com/$github$">$author$</a>
             <span class="avatar"><img src="/ide/images/$github$.png"/></span>
         </li>

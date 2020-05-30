@@ -1,5 +1,5 @@
 ---
-title: Weekly Update and Multiple Components
+posttitle: Weekly Update and Multiple Components
 author: Fendor
 date: 2020-05-15
 github: fendor

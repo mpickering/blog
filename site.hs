@@ -20,6 +20,10 @@ import Hakyll.Core.Compiler.Internal
 import Debug.Trace
 import System.Random.Shuffle
 import Data.List.Split
+import System.FilePath
+import Data.Char
+import Data.Maybe
+import Control.Applicative
 
 --------------------------------------------------------------------------------
 main :: IO ()
@@ -98,6 +102,7 @@ main = hakyll $ do
                              (field "gh" $ \item -> return (gh  (itemBody item)))
             let archiveCtx =
                     listField "person" contribCtx loadContribs `mappend`
+                    ideTitle `mappend`
                     defaultContext
 
             makeItem ""
@@ -114,10 +119,10 @@ main = hakyll $ do
           fmap (writePandocWith mathOpts) (getResourceBody
             >>= readPandocBiblio defaultHakyllReaderOptions csl bib)
             >>= saveSnapshot "content"
-            >>= loadAndApplyTemplate "ide/templates/post.html"postCtx
+            >>= loadAndApplyTemplate "ide/templates/post.html" idePostCtx
             >>= saveSnapshot "rss"
-            >>= loadAndApplyTemplate "ide/templates/ide.html" postCtx
-            >>= loadAndApplyTemplate "templates/default.html" postCtx
+            >>= loadAndApplyTemplate "ide/templates/ide.html" idePostCtx
+            >>= loadAndApplyTemplate "templates/default.html" idePostCtx
             >>= relativizeUrls
 
 
@@ -127,7 +132,7 @@ main = hakyll $ do
         route   $ setExtension "html"
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "ide/templates/ide.html" defaultContext
-            >>= loadAndApplyTemplate "templates/default.html" defaultContext
+            >>= loadAndApplyTemplate "templates/default.html" (ideTitle `mappend` defaultContext)
             >>= relativizeUrls
 
     match "ide/index.html" $ do
@@ -138,6 +143,7 @@ main = hakyll $ do
             let indexCtx =
                     listField "posts-show" teaserCtx (return post) `mappend`
                     listField "posts" teaserCtx (return posts) `mappend`
+                    constField "title" "IDE 2020" `mappend`
                     defaultContext
 
             getResourceBody
@@ -165,6 +171,16 @@ main = hakyll $ do
         posts <- fmap (take 10) . recentFirst =<< loadAllSnapshots "ide/posts/*" "rss"
         renderAtom ideFeedConfig feedCtx posts
 
+ideTitle :: Context a
+ideTitle
+  = field "title" $ \i -> do
+    let id = itemIdentifier i
+    value <- getMetadataField id "posttitle"
+    let def = takeBaseName (toFilePath id)
+        cdef = case def of
+                 [] -> []
+                 (h:t) -> toTitle h : t
+    return $ ("IDE 2020: " ++ fromMaybe cdef value)
 
 data Contrib = Contrib { name :: String, gh :: String } deriving Show
 
@@ -183,6 +199,9 @@ postCtx :: Context String
 postCtx =
     dateField "date" "%B %e, %Y" `mappend`
     defaultContext
+
+idePostCtx :: Context String
+idePostCtx = ideTitle `mappend` postCtx
 
 feedConfig :: FeedConfiguration
 feedConfig = FeedConfiguration

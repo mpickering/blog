@@ -1,5 +1,5 @@
 ---
-title: Fixing Space Leaks in Ghcide
+posttitle: Fixing Space Leaks in Ghcide
 author: Neil Mitchell
 date: 2020-05-27
 github: ndmitchell

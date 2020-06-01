@@ -309,6 +309,10 @@ how-to explanations, and I am far from an expert on all of them. So if you
 think something is amiss or if you don’t understand something feel free to
 contact me and maybe we can clarify it.
 
+A big thank you to everyone involved with ghcide, nixpkgs or obelisk who helped
+me with figuring all of this out! The nice people you meet are what actually
+makes all of this so much fun.
+
 I personally am definitely looking forward to the first official release of
 haskell-language-server and I am sure we can land it in nixpkgs quickly.
 

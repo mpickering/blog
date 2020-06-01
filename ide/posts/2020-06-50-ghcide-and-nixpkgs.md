@@ -216,7 +216,7 @@ If you are curious look at the commit. It
 
 ### What if I can‘t upstream my package or am stuck with an older nixpkgs version?
 
-Now I haven‘t told my story quit in order. I actually first went for another
+Now I haven‘t told my story quite in order. I actually first went for another
 solution, because I needed ghcide to work with my reflex-platform i.e obelisk
 project. Obelisk uses a pinned nixpkgs version _and_ a patched ghc. So what I
 did was putting the overrides I describe above as overrides into my projects
@@ -283,7 +283,7 @@ from there. Consult the README for more details.
 
 #### Pros
 
-* Cached binarys for all supported `ghc` versions via cachix.
+* Cached binaries for all supported `ghc` versions via cachix.
 * Always a recent version from the ghcide master branch.
 * Definitely recommended when you are already using the `haskell.nix`
   infrastructure for your project.

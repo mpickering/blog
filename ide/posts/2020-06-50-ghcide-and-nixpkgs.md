@@ -38,7 +38,7 @@ you much further and to me `ghcide` has already proven this.
 
 ### Compile your project and ghcide with the same ghc!
 
-One source of frustration is likely that succesfully setting up a language
+One source of frustration is likely that successfully setting up a language
 server that is deeply interwoven with `ghc` like `ghcide` has one very
 important requirement. **You need to compile `ghcide` with the same `ghc`
 (version) as your project.** This shouldn‘t be hard to achieve nowadays - I’ll
@@ -49,7 +49,7 @@ for a lot of trouble.
 So why exactly do we need to use "the same ghc" and what does that even mean?
 Frankly I am not totally sure. I am not a `ghcide` developer. I guess sometimes
 you can get away with some slight deviations. But the general recommendation is
-to use the same ghc version. I can tell you three situations that will cause
+to use the same `ghc` version. I can tell you three situations that will cause
 problems or have caused problems for me:
 
 1. Using another `ghc` release. E.g. using `ghcide` compiled with `ghc` 8.8 on

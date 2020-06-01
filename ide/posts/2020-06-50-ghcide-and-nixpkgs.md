@@ -14,11 +14,10 @@ ecosystem, it was actually pretty easy. In this post I wanna share my
 experience and tell you what I learned about the nixpkgs Haskell infrastructure
 and ghcide.
 It took me quite a while to collect the knowledge lain out below, so I gather
-it might be useful for someone else. But feel free to skip the parts that
-aren‘t of interest to you. This is a very explanatory post which is probably
-already much too long so I won‘t go to much into the details of actual nix
-code. If you just want to know how to use ghcide in a nix environment jump to
-the end of the post or just consult the README of ghcide.
+it might be useful for someone else. This is a very explanatory post which is
+probably already much too long so I won‘t go to much into the details of actual
+nix code. If you just want to know how to use ghcide in a nix environment jump
+to the end of the post or just consult the README of ghcide.
 
 <!--more-->
 
@@ -318,4 +317,4 @@ feel free to contact me and maybe we can clarify something.  I personally am
 definitely looking forward to the first official release of
 haskell-language-server and I am sure we can land it in nixpkgs quickly.
 
-## Other Updates
+### Other Updates

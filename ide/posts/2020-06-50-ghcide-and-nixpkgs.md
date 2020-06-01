@@ -80,8 +80,10 @@ problems or have caused problems for me:
    __libc_vfork, version GLIBC_PRIVATE)
    ```
 
-3. Using the same `ghc` release but with a patch to `ghc`. This happened to me
-   while using the `obelisk` framework which uses a modified `ghc`. 
+3. Using the same `ghc` release but with a patch to `ghc`. This e.g. happened
+   to me while using the [`obelisk`
+   framework](https://github.com/obsidiansystems/obelisk) which uses a modified
+   `ghc`.
 
 To sum up, both ghcs should come from the same source and be linked against the
 same libraries. Your best bet is to use the same binary. But that is not

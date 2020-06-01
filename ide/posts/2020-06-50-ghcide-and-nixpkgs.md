@@ -205,13 +205,13 @@ are interested in that you should definitely checkout the `haskell.nix`
 infrastructure.
 But that really does not go well together with providing all of hackage in
 nixpkgs. For starters having every version of every Haskell package in nixpkgs
-would already be very verbose. And it would lead to tons of different builds
-for the same package even with the same version, one for every different valid
-build plan of dependencies. And still if nixpkgs would only build the build
-plans necessary to build every package once, your project would probably use
-a different build plan and therefore you would need to compile a lot of
-dependencies by yourself and couldn‘t use the precompiled derivations from
-nixpkgs.
+would already be very verbose. And Haskell dependency resolution is structured
+in a way that in one build all dependencies have to agree on the version of
+mutual further dependencies.  That means two build plans that use the same
+version of one package might still need different builds of that package.  As a
+result it could very well happen that your project could not profit a lot from
+the nixpkgs binary cache even when it had precompiled every version of every
+Haskell package.
 
 There can probably be said a lot more about this. But I have accepted that the
 chosen solution in nixpkgs actually has a lot of advantages (mainly fewer

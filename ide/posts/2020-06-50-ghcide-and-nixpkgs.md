@@ -233,7 +233,7 @@ So what can we do to fix a broken package on nixpkgs?
 
 ### How to fix broken Haskell builds in nixpkgs in general
 
-[(Also watch this video, if you are interested in
+[(Also watch this video if you are interested in
 this).](https://www.youtube.com/watch?v=KLhkAEk8I20)
 
 1. Often the error is actually fixed by an upstream version bound change, so

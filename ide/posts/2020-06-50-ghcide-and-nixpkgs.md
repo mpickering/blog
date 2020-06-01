@@ -217,7 +217,7 @@ If you are curious look at the commit. It
 
 ### What if I can‘t upstream my package or am stuck with an older nixpkgs version?
 
-Now I haven‘t told my story quit in order. I actually first went for another
+Now I haven‘t told my story quite in order. I actually first went for another
 solution, because I needed ghcide to work with my reflex-platform i.e obelisk
 project. Obelisk uses a pinned nixpkgs version _and_ a patched ghc. So what I
 did was putting the overrides I describe above as overrides into my projects

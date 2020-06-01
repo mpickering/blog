@@ -284,7 +284,7 @@ from there. Consult the README for more details.
 
 #### Pros
 
-* Cached binarys for all supported `ghc` versions via cachix.
+* Cached binaries for all supported `ghc` versions via cachix.
 * Always a recent version from the ghcide master branch.
 * Definitely recommended when you are already using the `haskell.nix`
   infrastructure for your project.

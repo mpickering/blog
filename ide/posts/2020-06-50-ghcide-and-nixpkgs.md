@@ -287,8 +287,8 @@ overrides into my projects `default.nix`. That‘s always a nice way to first
 figure out how to fix a dependency, but of course you help a lot more people if
 you find a way to upstream the fixes into nixpkgs.  Because the nixpkgs version
 in reflex-platform was so old I had to manually create some of the packages
-with a function called `callHackageDirect`. It’s kinda the last way out, put it
-is very flexibel and should be enough to solve most dependency issues. If
+with a function called `callHackageDirect`. It’s kinda the last way out, but it
+is very flexible and should be enough to solve most dependency issues. If
 nothing else helps, create a build plan with cabal and reproduce it by hand
 with nix overrides. That actually worked for me, when [I tried to get ghcide to
 run with

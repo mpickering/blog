@@ -63,7 +63,7 @@ problems or have caused problems for me:
 
 2. Using the same `ghc` version but linked against different external libraries
    like `glibc`. This [can
-   happen](https://github.com/digital-asset/ghcide/issues/404) [when different
+   happen](https://github.com/digital-asset/ghcide/issues/404) when [different
    releases](https://github.com/digital-asset/ghcide/issues/538) of nixpkgs are
    involved. This could look like this:
 

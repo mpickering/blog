@@ -31,9 +31,9 @@ channel, inescapably there will come at least one answer of the form "It’s not
 worth the pain. Just use ghcid." I guess one point of this blog series is that
 this does not have to be the case anymore.
 
-But what were the reasons for this resignation? One is certainly that
+So, what were the reasons for this resignation? One is certainly that
 [`ghcid`](https://github.com/ndmitchell/ghcid) is a really great and easy to
-use tool. But I think it‘s clear that a well done language server can leverage
+use tool. I think it‘s clear that a well done language server can leverage
 you much further and to me `ghcide` has already proven this.
 
 ### Compile your project and ghcide with the same ghc!
@@ -48,7 +48,7 @@ for a lot of trouble.
 
 So why exactly do we need to use "the same ghc" and what does that even mean?
 Frankly I am not totally sure. I am not a `ghcide` developer. I guess sometimes
-you can get away with some slight deviations. But the general recommendation is
+you can get away with some slight deviations, but the general recommendation is
 to use the same `ghc` version. I can tell you three situations that will cause
 problems or have caused problems for me:
 
@@ -107,8 +107,10 @@ specific project.
 The less brittle and more versatile way is to configure `ghcide` in your
 projects `shell.nix`. You probably already have a list with other dev tools you
 use in there, like `with haskellPackages; [ hlint brittany ghcide ]`. Just add
-`ghcide` in that list and you are good to go. See e.g. [this post for a recent post about a Haskell dev setup with nix](https://discourse.nixos.org/t/nix-haskell-development-2020/6170). If you are stuck with an old
-nixpkgs version, have a look at the end of part 4.
+`ghcide` in that list and you are good to go. See e.g. [this post for a recent
+post about a Haskell dev setup with
+nix](https://discourse.nixos.org/t/nix-haskell-development-2020/6170). If you
+are stuck with an old nixpkgs version, have a look at the end of part 4.
 
 #### Pros
 
@@ -122,7 +124,7 @@ nixpkgs version, have a look at the end of part 4.
   nixpkgs-stable it might not even be the last release.
 * When you use another `ghc` version than the default in your nixpkgs version,
   nix will compile ghcide on your computer because it isn‘t build by hydra.
-  (But build times are totally fine.)
+  (build times are totally fine though.)
 
 ### ghcide-nix
 
@@ -144,15 +146,42 @@ from there. Consult the README for more details.
   infrastructure.
 * Larger nix store closure.
 
+### Configuration and Setup
+
+Of course, after installing you need to test `ghcide` and possible write a
+`hie.yaml` file to get `ghcide` to work with a specific project. This is
+not very nix specific and will probably change in the future, so I don‘t dive
+into it right now. Consult the readmes of
+[`ghcide`](https://github.com/digital-asset/ghcide) and
+[`hie-bios`](https://github.com/mpickering/hie-bios).
+
+There is though one point to note here and that is package discovery. `ghcide`
+needs to know all the places that `ghc` uses to lookup dependencies. When (and
+I think only when) you use the `ghc.withPackages` function from `nixpkgs` the
+dependencies are provided to `ghc` via environment variables set in a wrapper
+script. In general `ghcide` will not know about this variables and fail to find
+dependencies.
+E.g.:
+
+```
+Step 4/6, Cradle 1/2: Loading GHC Session
+ghcide: <command line>: cannot satisfy -package-id aeson-1.4.7.1-5lFE4NI0VYBHwz75Ema9FX
+```
+
+To prevent this you need to find a way to set those environment variables when
+starting `ghcide`. [I have a PR
+underway](https://github.com/NixOS/nixpkgs/pull/89450) which should do this for
+you if you install `ghcide` by putting it in the same `withPackages` list.
+
 ## 3. The nixpkgs Haskell ecosytem and dependency resolution
 
-This section might be slightly off-topic here, so feel free to skip it.  But I
-think this is really useful to know if you work with Haskell and nixpkgs and I
-regard it as necessary context to understand the fix outlined in part 4.
+This section might be slightly off-topic here, so feel free to skip it. I think
+this is really useful to know if you work with Haskell and nixpkgs and I regard
+it as necessary context to understand the fix outlined in part 4.
 
 ### Haskell dependency resolution in general
 
-Dependency resolution problems have a long history in Haskell. But today there
+Dependency resolution problems have a long history in Haskell, but today there
 are two solutions that both work quite well in general.
 
 1. Specify upper and lower bounds for every dependency in your cabal file and
@@ -169,7 +198,7 @@ approach.
 
 ### Haskell in nixpkgs - pkgs.hackagePackages
 
-But how does nixpkgs do it? Well basically solution two. Everyday [a
+So how does nixpkgs do it? Well basically solution two. Everyday [a
 cronjob](https://github.com/NixOS/nixpkgs/commit/0a566a5777264e58fbfc259cb6453a9685dc5bfb)
 pulls a list of **all packages from a pinned stack LTS release** and creates a
 derivation for every one of them. It also pulls **all other packages from
@@ -198,7 +227,7 @@ this](https://discourse.nixos.org/t/nix-and-the-haskell-eco-system-a-match-made-
 And I guess for others casually encountering broken Haskell packages in
 nixpkgs, without understanding this setup can be annoying.
 
-But what would be a suitable alternative to this for nixpkgs? Tough to say. We
+What could be a suitable alternative to this for nixpkgs? Tough to say. We
 could try to use some solution like the go, rust or node ecosystem and check in
 a build plan for every package. Actually that can be a nice solution and if you
 are interested in that you should definitely checkout the `haskell.nix`
@@ -213,7 +242,7 @@ result it could very well happen that your project could not profit a lot from
 the nixpkgs binary cache even when it had precompiled every version of every
 Haskell package.
 
-There can probably be said a lot more about this. But I have accepted that the
+There can probably be said a lot more about this, but I have accepted that the
 chosen solution in nixpkgs actually has a lot of advantages (mainly fewer
 compilation work for everyone) and I actually haven‘t encountered a package I
 couldn‘t get to build with nixpkgs. The truth is the best guess build plan
@@ -285,13 +314,14 @@ to work with my obelisk project. Obelisk uses a pinned nixpkgs version _and_ a
 patched ghc. So what I did was putting the overrides I describe above as
 overrides into my projects `default.nix`. That‘s always a nice way to first
 figure out how to fix a dependency, but of course you help a lot more people if
-you find a way to upstream the fixes into nixpkgs.  Because the nixpkgs version
-in reflex-platform was so old I had to manually create some of the packages
-with a function called `callHackageDirect`. It’s kinda the last way out, but it
-is very flexible and should be enough to solve most dependency issues. If
-nothing else helps, create a build plan with cabal and reproduce it by hand
-with nix overrides. That actually worked for me, when [I tried to get ghcide to
-run with
+you find a way to upstream the fixes into nixpkgs.
+
+I had to manually create some of the packages with a function called
+`callHackageDirect` because the nixpkgs version in reflex-platform was so old.
+It’s kinda the last way out, but it is very flexible and should be enough to
+solve most dependency issues. If nothing else helps, create a build plan with
+cabal and reproduce it by hand with nix overrides. That actually worked for me,
+when [I tried to get ghcide to run with
 obelisk.](https://github.com/obsidiansystems/obelisk/issues/660#issuecomment-594277283)
 
 ## Final remarks
@@ -307,7 +337,7 @@ special case development situations like obelisk. So my recommendation is, set
 it up right now, you won’t want to work without it anymore.
 
 In this post I have touched a lot of topics, which could all use more concrete
-how-to explanations, and I am far from an expert on all of them. So if you
+how-to explanations, and on all of them I am far from an expert. So if you
 think something is amiss or if you don’t understand something feel free to
 contact me and maybe we can clarify it.
 
@@ -316,6 +346,8 @@ me with figuring all of this out! The nice people you meet are what actually
 makes all of this so much fun.
 
 I personally am definitely looking forward to the first official release of
-haskell-language-server and I am sure we can land it in nixpkgs quickly.
+haskell-language-server and I am sure we can land it in nixpkgs quickly. ghcide
+0.2.0 will probably be merged into nixpkgs master, while this post is getting
+released.
 
 ### Other Updates

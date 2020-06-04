@@ -346,8 +346,10 @@ me with figuring all of this out! The nice people you meet are what actually
 makes all of this so much fun.
 
 I personally am definitely looking forward to the first official release of
-haskell-language-server and I am sure we can land it in nixpkgs quickly. ghcide
-0.2.0 will probably be merged into nixpkgs master, while this post is getting
-released.
+haskell-language-server and I am sure we can land it in nixpkgs quickly.
+[ghcide 0.2.0 will probably be
+merged](https://github.com/NixOS/nixpkgs/pull/89447) into [nixpkgs
+master](https://github.com/NixOS/nixpkgs/pull/89456), while this post is
+getting released.
 
 ### Other Updates

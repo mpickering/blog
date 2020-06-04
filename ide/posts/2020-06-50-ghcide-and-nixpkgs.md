@@ -6,8 +6,7 @@ github: maralorn
 ---
 
 A few weeks ago I got [ghcide](https://github.com/digital-asset/ghcide) into
-[nixpkgs](https://nixos.org/nixpkgs), the package set of [the package manager
-nix](https://nixos.org/nix) and [the distribution
+[nixpkgs, the package set of the package manager nix and the distribution
 nixos](https://nixos.org/nixos). Mind you, that was not a brave act of heroism
 or dark wizardry. Once I grasped the structure of the nixpkgs Haskell
 ecosystem, it was actually pretty easy. In this post I want to share my

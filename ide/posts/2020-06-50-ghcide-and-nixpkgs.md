@@ -271,7 +271,7 @@ this).](https://www.youtube.com/watch?v=KLhkAEk8I20)
    build plan but cabal doesn‘t believe us. So we can do a "jailbreak" and just
    tell cabal to ignore the version constraints. We don‘t do this by default
    because even if the package builds, it might now have changed semantics
-   because of a change in a dependency. So a jailbreak package should be tested
+   because of a change in a dependency. So a jailbreaked package should be tested
    and reported upstream so that the cabal restrictions of that package can get
    fixed.
 3. If those two don‘t help we can still override the build plan manually to use

@@ -107,7 +107,7 @@ The less brittle and more versatile way is to configure `ghcide` in your
 projects `shell.nix`. You probably already have a list with other dev tools you
 use in there, like `with haskellPackages; [ hlint brittany ghcide ]`. Just add
 `ghcide` in that list and you are good to go. See e.g. [this post for a recent
-summary about a Haskell dev setup with
+discussion about a Haskell dev setup with
 nix](https://discourse.nixos.org/t/nix-haskell-development-2020/6170). If you
 are stuck with an old nixpkgs version, have a look at the end of part 4.
 

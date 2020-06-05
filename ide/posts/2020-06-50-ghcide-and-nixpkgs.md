@@ -1,5 +1,5 @@
 ---
-title: Getting ghcide into nixpkgs
+posttitle: Getting ghcide into nixpkgs
 author: Malte Brandy
 date: 2020-06-05
 github: maralorn

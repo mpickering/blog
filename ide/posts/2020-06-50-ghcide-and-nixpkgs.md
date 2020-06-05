@@ -350,5 +350,3 @@ haskell-language-server and I am sure we can land it in nixpkgs quickly.
 merged](https://github.com/NixOS/nixpkgs/pull/89447) into [nixpkgs
 master](https://github.com/NixOS/nixpkgs/pull/89456) around the same time that
 this post is getting released.
-
-### Other Updates

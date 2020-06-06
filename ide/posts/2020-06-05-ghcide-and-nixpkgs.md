@@ -145,6 +145,15 @@ from there. Consult the README for more details.
   infrastructure.
 * Larger nix store closure.
 
+**EDIT:** I have been made aware of an alternative method to install `ghcide`
+with `haskell.nix`:
+
+> you can add it to a haskell.nix shell (one created with the `shellFor`
+> function) with `x.shellFor { tools = { ghcide = "0.2.0"; }; }`. This will
+> build `ghcide` with the `ghc` version in the shell.
+
+Have a look at the `haskell.nix` documentation for more details.
+
 ### Configuration and Setup
 
 Of course, after installing you need to test `ghcide` and possible write a

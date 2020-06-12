@@ -169,11 +169,11 @@ and send your contributions for review!
 [1]: https://twitter.com/cocreature/status/1267837792064876545?s=20
 [2]: https://github.com/pepeiborra/ghcide/blob/more-benchmark/bench/Hist/Main.hs
 [3]: https://neilmitchell.blogspot.com/2020/05/fixing-space-leaks-in-ghcide.html
-[4]: /ide/images/benchmarks/hoverAfterEdit-majorVersions.svg
+[4]: /ide/images/hoverAfterEdit-majorVersions.svg
 [5]: https://github.com/digital-asset/ghcide/pull/329
 [6]: https://mpickering.github.io/bristol2020.html
 [7]: https://github.com/digital-asset/ghcide/pull/588
-[8]: /ide/images/benchmarks/hoverAfterEdit-hashablePR.svg
+[8]: /ide/images/hoverAfterEdit-hashablePR.svg
 [9]: https://raw.githubusercontent.com/pepeiborra/ghcide/bench-hist-dump/bench-hist/interface_files/getDefinition.diff.svg
 [10]: https://raw.githubusercontent.com/pepeiborra/ghcide/bench-hist-dump/bench-hist/interface_files/hover_after_edit.diff.svg
 [11]: https://github.com/digital-asset/ghcide/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22

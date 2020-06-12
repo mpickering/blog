@@ -1,9 +1,10 @@
-#!/usr/bin/env cabal -wghc-8.8.3 run
+#!/usr/bin/env cabal --enable-nix run
 {- cabal:
 build-depends: base >= 4
              , hakyll
              , random-shuffle
              , containers
+             , filepath
              , pandoc
              , split
 -}

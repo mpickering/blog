@@ -157,7 +157,7 @@ does so for this particular performance regression.
 
 ## Conclusion
 
-ghcide is still a very young project and that means plenty of low
+ghcide is a very young project with plenty of low
 hanging fruit for the catch. With a benchmark suite in place, the
 project is now in a better position to accept contributions without the
 fear of incurring into performance regressions or introducing new space leaks.

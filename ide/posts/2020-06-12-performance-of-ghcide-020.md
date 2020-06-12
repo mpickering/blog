@@ -27,7 +27,7 @@ making ghcide unresponsive. Thus one of my early contributions to the project
 was to use [better default GC settings][5] to great effect.
 
 Work to improve the situation started during the [Bristol Hackathon][6] that
-Matthew Pickering organised, where some of us set to teach ghcide to leverage `.hi` and `.hie` files produced by GHC to reduce the memory usage. Version 0.2.0 is the culmination of those efforts, allowing it to handle large projects much better.
+Matthew Pickering organised, where some of us set to teach ghcide to leverage `.hi` and `.hie` files produced by GHC to reduce the memory usage. Version 0.2.0 is the culmination of those efforts, allowing it to handle much larger projects with ease.
 
 In parallel, Matthew Pickering and Neil Mitchell spent some long hours chasing
 and plugging a number of space leaks that were causing an unbounded memory
@@ -137,8 +137,8 @@ compared with the previous version:
 
 On a first impression this looks like a net win: shorter execution time and lower memory usage,
 as one would expect from such a change. But when we look at another experiment, hover after edit,
-the tables turn around as the experiment takes almost twice as long as previously, while consuming
-nearly as much memory:
+the tables turn as the experiment takes almost twice as long as previously, while consuming
+even more memory:
 
 ![ghcide heap size before and after interface files (hover after edit)][10]
 

@@ -5,29 +5,29 @@ date: 2020-06-15
 github: pepeiborra
 ---
 
-You may have tried ghcide in the past and given up after running out of memory.
-If this was your experience, you should be aware that ghcide v0.2.0 was released
+You may have tried *ghcide* in the past and given up after running out of memory.
+If this was your experience, you should be aware that *ghcide* v0.2.0 was released
 [earlier this month][1] with a number of very noticeable efficiency improvements.
 Perhaps after reading this post you will consider giving it another try.
 
 In case you don't have time much, this is what the heap size looks like while
-working on the Cabal project (230 modules) over different versions of ghcide:
+working on the Cabal project (230 modules) over different versions of *ghcide*:
 
 ![ghcide heap size while working on Cabal][4]
 
-The graph shows that ghcide v0.2.0 is much more frugal and doesn't' leak. These improvements apply to haskell-language-server as well, which builds on a version of ghcide that includes these benefits.
+The graph shows that *ghcide* v0.2.0 is much more frugal and doesn't' leak. These improvements apply to haskell-language-server as well, which builds on a version of *ghcide* that includes these benefits.
 
 ## Background
 
-A few months ago I started using ghcide 0.6.0.
+A few months ago I started using *ghcide* 0.6.0.
 It worked fine for small packages, but our codebase at work has a few
-hundreds of modules and ghcide would happily grow >50GB of RAM. While the
+hundreds of modules and *ghcide* would happily grow >50GB of RAM. While the
 development server I was using had RAM to spare, the generation 1 garbage collector pauses were multi-second and
-making ghcide unresponsive. Thus one of my early contributions to the project
+making *ghcide* unresponsive. Thus one of my early contributions to the project
 was to use [better default GC settings][5] to great effect.
 
 Work to improve the situation started during the [Bristol Hackathon][6] that
-Matthew Pickering organised, where some of us set to teach ghcide to leverage `.hi` and `.hie` files produced by GHC to reduce the memory usage. Version 0.2.0 is the culmination of those efforts, allowing it to handle much larger projects with ease.
+Matthew Pickering organised, where some of us set to teach *ghcide* to leverage `.hi` and `.hie` files produced by GHC to reduce the memory usage. Version 0.2.0 is the culmination of those efforts, allowing it to handle much larger projects with ease.
 
 In parallel, Matthew Pickering and Neil Mitchell spent some long hours chasing
 and plugging a number of space leaks that were causing an unbounded memory
@@ -43,7 +43,7 @@ introduction of space leaks that are very costly to diagnose once they get in.
 Usually the main hurdle with defining a benchmark suite is ensuring that the experiments do
 reproduce faithfully the real world scenario that is being analysed.
 Thankfully, the fantastic lsp-test package makes this relatively easy in this case.
-An experiment in the new and shiny ghcide benchmark suite looks like follows:
+An experiment in the new and shiny *ghcide* benchmark suite looks like follows:
 
 <p>
 <script src="http://gist-it.appspot.com/http://github.com/pepeiborra/ghcide/blob/144837aa90b75f8dab5a8e639369b5ca1fba6e66/bench/Main.hs?slice=103:106"></script>
@@ -61,7 +61,7 @@ Currently the benchmark suite has the following experiments covering the most co
     - documentSymbols after edit
 
 The benchmark unpacks the Cabal 3.0.0.0 package (using Cabal of course), then
-starts ghcide and uses Luke's lsp-test package to simulate opening
+starts *ghcide* and uses Luke's lsp-test package to simulate opening
 the `Distribution.Version` module and repeating the experiment a fixed number of times,
 collecting time and space metrics along the way. It's not using criterion or anything
 sophisticated yet, so there is plenty of margin for improvement. But at least it provides
@@ -72,14 +72,14 @@ worth pursuing.
 
 Now that we have a standard set of experiments, we can give an answer to the question:
 
-> How did the performance change since the previous release of ghcide?
+> How did the performance change since the previous release of *ghcide*?
 
 Glad that you asked!
 
 I have put together a little Shake script to checkout, benchmark and compare a set of git
 commit ids automatically. It is able to produce simple graphs of memory usage over time too.
 I have used it to generate all the graphs included in this blog post, and to gain insights
-about the performance of ghcide over time that have already led to new performance improvements,
+about the performance of *ghcide* over time that have already led to new performance improvements,
 as explained in the section about interfaces a few lines below.
 
 The script is currently still in [pull request][PR-histBench].
@@ -91,19 +91,19 @@ experiment. It's reproduced below for convenience.
 
 ![ghcide heap size while working on Cabal][4]
 
-The graph shows very clearly that versions 0.0.5, 0.0.6 and 0.1.0 of ghcide
+The graph shows very clearly that versions 0.0.5, 0.0.6 and 0.1.0 of *ghcide*
 contained a roughly constant space leak that caused the huge memory usage
-that caused many people including myself struggle with ghcide. As ghcide became
+that caused many people including myself struggle with *ghcide*. As *ghcide* became
 faster in v0.1.0 the leak became faster too, making the situation perhaps even worse.
 
 The good news is that not only does v0.2.0 leak nearly zero bytes in this experiment, but
 it also sits at a much lower memory footprint. Gone are the days of renting
-EC2 16xlarge instances just to be able to run ghcide in your project!
+EC2 16xlarge instances just to be able to run *ghcide* in your project!
 
 The graph also shows that v0.1.0 became 2.5X faster than the previous version,
 whereas v0.2.0 regressed in speed by a roughly similar amount.
 I wasn't aware of this fact before running these experiments,
-and I don't think any of the usual ghcide contributors was either.
+and I don't think any of the usual *ghcide* contributors was either.
 By pointing the performance over time script to a bunch of commits in between the 0.1.0 and
 0.2.0 version tags, it was relatively easy to track this regression down to the change that
 introduced interface files. More details a few lines below.
@@ -128,6 +128,16 @@ That statement doesn't really illustrate the massive space benefits of this fix.
 must show not only time but also space metrics, which are often just as important or even more.
 
 ## The switch to interfaces
+
+*ghcide* versions prior to 0.2.0 would load, parse and typecheck all the dependencies of a module, and
+then cache those in memory for the rest of the session. That's very wasteful given that *GHC* supports
+separate compilation to avoid exactly this, writing a so called "interface" or `.hi` file down to disk with
+the results of parsing and typechecking a module. And indeed, *GHCi*, *ghcid* and other build tools
+including *GHC* itself leverage these interface files to avoid re-typechecking a module unless it's
+strictly necessary. In version 0.2.0 we have rearranged some of the internals to take advantage
+of interface files for typechecking and other tasks: if an interface file is available and up-to-date
+it will be reused, otherwise the module is typechecked and a new interface file is generated.
+0.2.0 also leverages extended interface (`.hie`) files for similar purposes.
 
 The graph below shows the accumulated impact of the switch to interface files, which
 was spread over several PRs for ease of review, using the get definition experiment
@@ -157,7 +167,7 @@ does so for this particular performance regression.
 
 ## Conclusion
 
-ghcide is a very young project with plenty of low
+*ghcide* is a very young project with plenty of low
 hanging fruit for the catch. With a benchmark suite in place, the
 project is now in a better position to accept contributions without the
 fear of incurring into performance regressions or introducing new space leaks.

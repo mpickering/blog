@@ -1,7 +1,7 @@
 ---
 posttitle: The performance of ghcide 0.2.0
 author: Pepe Iborra
-date: 2020-06-15
+date: 2020-06-12
 github: pepeiborra
 ---
 
@@ -19,7 +19,7 @@ The graph shows that *ghcide* v0.2.0 is much more frugal and doesn't' leak. Thes
 
 ## Background
 
-A few months ago I started using *ghcide* 0.6.0.
+A few months ago I started using *ghcide* 0.0.6.
 It worked fine for small packages, but our codebase at work has a few
 hundreds of modules and *ghcide* would happily grow >50GB of RAM. While the
 development server I was using had RAM to spare, the generation 1 garbage collector pauses were multi-second and

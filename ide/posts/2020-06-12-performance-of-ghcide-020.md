@@ -46,7 +46,7 @@ Thankfully, the fantastic lsp-test package makes this relatively easy in this ca
 An experiment in the new and shiny *ghcide* benchmark suite looks like follows:
 
 <p>
-<script src="http://gist-it.appspot.com/http://github.com/pepeiborra/ghcide/blob/144837aa90b75f8dab5a8e639369b5ca1fba6e66/bench/Main.hs?slice=103:106"></script>
+<script src="https://gist-it.appspot.com/http://github.com/pepeiborra/ghcide/blob/144837aa90b75f8dab5a8e639369b5ca1fba6e66/bench/Main.hs?slice=103:106"></script>
 </p>
 
 Currently the benchmark suite has the following experiments covering the most common actions:

@@ -103,7 +103,7 @@ example = ["This","is","an","example","of"]
 Executing these haddock code-examples by hand is a bit tedious. It is way easier to just execute a _code lens_ and see the result.
 With the "Eval" plugin, it is as easy as a single click to produce the relevant output:
 
-[![Evaluate Haddock code comment](https://i.imgur.com/raaTFKr.gif)
+![Evaluate Haddock code comment](https://i.imgur.com/raaTFKr.gif)
 
 And as promised, changes to any of the relevant definitions are picked up and we can update our haddock example:
 

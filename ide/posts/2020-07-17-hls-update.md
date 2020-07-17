@@ -7,7 +7,7 @@ github: fendor
 
 We are back for another update of this summer's Haskell IDE efforts.
 Quite some time has passed since our last update, so we have a lot to tell you about!
-We are going to speak about what is new in the latest release and what other new features are already waiting  in the pipeline.
+We are going to speak about what is new in the latest release and what other new features are already waiting in the pipeline.
 
 ## Release Haskell Language Server 0.2.0
 

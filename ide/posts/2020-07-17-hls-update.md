@@ -100,7 +100,7 @@ example :: [String]
 example = ["This","is","an","example","of"]
 ```
 
-Executing these haddock code-examples by hand is a bit tedious. It is way easier to just execute a codelens and see the result.
+Executing these haddock code-examples by hand is a bit tedious. It is way easier to just execute a _code lens_ and see the result.
 With the "Eval" plugin, it is as easy as a single click to produce the relevant output:
 
 [![Evaluate Haddock code comment](https://i.imgur.com/raaTFKr.gif)

@@ -79,7 +79,7 @@ This has been a long requested feature! The first issue I can find about it was 
 Now we are close to being able to offer pre-built binaries for Windows, macOS and Linux.
 
 A natural extension of this will be to make it possible to download these binaries from your editor extension. This is also in the making, although, for now, only for the vscode extension `vscode-hie-server`.
-With prebuilt binaries, we hope to make the setup experience for newcomers easier to understand and faster to follow and no longer force users to compile everything from scratch which can take hours and hours.
+With prebuilt binaries, we hope to make the setup experience for newcomers easier and faster, without the need to compile everything from scratch, which can take hours and hours.
 
 As the cherry on top, we plan to integrate these pre-built binaries with the successful tool [ghcup](https://www.haskell.org/ghcup/). This will improve the tooling story for Haskell and setting up from zero to a full-blown development environment will be a matter of minutes.
 

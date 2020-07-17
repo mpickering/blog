@@ -76,7 +76,7 @@ Nevertheless, I will tease some upcoming improvements, with a disclaimer, that w
 
 This has been a long requested feature! The first issue I can find about it was created for Haskell IDE Engine in January 2019. Back then, Haskell IDE Engine was facing a number of road blocks, such as data-files that are not easily relocatable and reliance on packages such as `ghc-paths` which compile important run-time information into the binary. Piece by piece, these issues have been resolved by patching upstream libraries, using alternative APIs and querying the run-time information at, well, run-time. Major changes to [hie-bios](https://github.com/mpickering/hie-bios/) were necessary in order to make it possible to find the information we care about.
 
-Now we are close to being able to offer pre-built binaries for major platforms, such as windows, macos and (posix compliant) linux systems.
+Now we are close to being able to offer pre-built binaries for Windows, macOS and Linux.
 
 A natural extension of this will be to make it possible to download these binaries from your editor extension. This is also in the making, although, for now, only for the vscode extension `vscode-hie-server`.
 With prebuilt binaries, we hope to make the setup experience for newcomers easier to understand and faster to follow and no longer force users to compile everything from scratch which can take hours and hours.

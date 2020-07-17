@@ -85,7 +85,7 @@ As the cherry on top, we plan to integrate these pre-built binaries with the suc
 
 ### Simple Eval Plugin
 
-A new plugin called "Eval" will be added soon, the Haskell Language Server! Its purpose is to automatically execute code in haddock comments to make sure that example code is up-to-date to the actual implementation of the function. This does not replace a proper CI, nor [doctest](https://github.com/sol/doctest#readme), but it is a simple quality of life improvement!
+A new plugin called "Eval" will be added soon to the Haskell Language Server! Its purpose is to automatically execute code in haddock comments to make sure that example code is up-to-date to the actual implementation of the function. This does not replace a proper CI, nor [doctest](https://github.com/sol/doctest#readme), but it is a simple quality of life improvement!
 
 For example, assume the following piece of code:
 
@@ -108,4 +108,3 @@ With the "Eval" plugin, it is as easy as a single click to produce the relevant 
 And as promised, changes to any of the relevant definitions are picked up and we can update our haddock example:
 
 ![Update Haddock code comment](https://i.imgur.com/G6WbAQd.gif)
-

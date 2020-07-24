@@ -1,7 +1,7 @@
 #!/usr/bin/env cabal --enable-nix run
 {- cabal:
 build-depends: base >= 4
-             , hakyll
+             , hakyll == 4.*
              , random-shuffle
              , containers
              , filepath

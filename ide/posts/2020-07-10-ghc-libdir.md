@@ -201,7 +201,7 @@ rather hefty build matrix for all the verisons we support:
 ```
 
 <p align="center">
-<img alt="Now that's what I call a build matrix" src="images/github-actions-matrix.png" height="300"/>
+<img alt="Now that's what I call a build matrix" src="/ide/images/github-actions-matrix.png" height="300"/>
 </p>
 
 Unfortunately the story of Haskell on Windows is a bit hairy as usual, so there
@@ -271,7 +271,7 @@ you are using, and the extension will automatically download the latest binaries
 whenever a new version of `haskell-language-server` is released. The video below
 shows it in action:
 
-<video controls alt="Visual Studio Code demo" style="width: 100%" src="images/vscode-demo.mov" />
+<video controls alt="Visual Studio Code demo" style="width: 100%" src="/ide/images/vscode-demo.mov" />
 
 Hopefully this one click install will help users get setup a lot more quickly,
 but it is worth noting that at either GHC, Cabal or Stack still need to be

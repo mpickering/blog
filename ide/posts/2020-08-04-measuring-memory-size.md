@@ -13,7 +13,7 @@ In this post I want to describe that journey and hopefully encourage some more p
 
 ## The prompt
 
-This all started when one of my GSoC mentors, Matthew Pickering, suggested that I use the [ghc-datasize](https:github.com/def-/ghc-datasize) library to measure the in-memory size of a large hashmap at the core of ghcide. This would be useful as memory usage is something we have discussed as a target for improvement on ghcide. This info would allow us to correlate actions in the editor with spikes in memory usage, including exactly what data is taking up space. We could also check whether entries in this HashMap are released when appropriate, for example, when a file is closed.
+This all started when one of my GSoC mentors, Matthew Pickering, suggested that I use the [ghc-datasize](https://github.com/def-/ghc-datasize) library to measure the in-memory size of a large hashmap at the core of ghcide. This would be useful as memory usage is something we have discussed as a target for improvement on ghcide. This info would allow us to correlate actions in the editor with spikes in memory usage, including exactly what data is taking up space. We could also check whether entries in this HashMap are released when appropriate, for example, when a file is closed.
 
 ## Starting out
 

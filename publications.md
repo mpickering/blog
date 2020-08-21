@@ -4,14 +4,14 @@ title: Publications
 
 # Drafts
 
-* Staged Sums of Product. Matthew Pickering, Andres Löh, Nicolas Wu. In submission 2020 ([PDF](papers/staged-sop.pdf))
-* A Specification for Typed Template Haskell. Matthew Pickering, Andres Löh, Nicolas Wu. In limbo 2020 ([PDF](papers/specification-typed-th.pdf))
-* Staged Selective Parser Combinators. Jamie Willis, Nicolas Wu, Matthew Pickering. ICFP 2020 ([PDF](papers/parsley-icfp.pdf))
+* A Specification for Typed Template Haskell. Matthew Pickering, Andres Löh, Nicolas Wu. In limbo 2020 (Rejected ICFP 2020) ([PDF](papers/specification-typed-th.pdf))
 
 # Publications
 
 [Google Scholar](https://scholar.google.com/citations?user=nRJGAIYAAAAJ&hl=en)
 
+* **Staged Sums of Product**. Matthew Pickering, Andres Löh, Nicolas Wu. Haskell 2020 ([PDF](papers/staged-sop.pdf))
+* **Staged Selective Parser Combinators**. Jamie Willis, Nicolas Wu, Matthew Pickering. ICFP 2020 ([PDF](papers/parsley-icfp.pdf))
 * **Multi-Stage Programs in Context**. Matthew Pickering, Nicolas Wu, Csongor Kiss. Haskell Symposium 2019
 ([PDF](papers/multi-stage-programs-in-context.pdf))
 * **Working with Source Plugins**. Matthew Pickering, Nicolas Wu, Boldizsár Németh. Haskell Symposium 2019

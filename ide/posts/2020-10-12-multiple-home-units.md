@@ -16,7 +16,7 @@ Finally, a word or two about my experience in this Google Summer of Code, what I
 
 ## Motivation
 
-As explained in on of my previous [blog posts](https://mpickering.github.io/ide/posts/2020-05-15-multiple-components.html), my motivation for this project was to improve the tooling situation for IDEs as well as build tools such as `cabal` and `stack`. What am I talking about in particular?
+As explained in on of my previous [blog posts](https://mpickering.github.io/ide/posts/2020-05-15-multiple-components.html), my motivation for this project was to improve the tooling situation for IDEs as well as build tools such as `cabal-install` and `stack`. What am I talking about in particular?
 
 Take this example:
 ```bash
@@ -73,7 +73,7 @@ make changes to a dependent component then quit and reload.
 
 That did not work. Turns out, such a feature is not implemented.
 
-Maybe you know about this issue in `cabal` and are now suggesting use `stack`, where this actually works:
+Maybe you know about this issue in `cabal-install` and are now suggesting use `stack`, where this actually works:
 
 ```bash
 $ stack init  --resolver lts-14.21 # or insert your lts of choice
@@ -94,7 +94,7 @@ For a slightly contrived example, imagine you define a module `Data.Map` private
 So, in short, the behaviour we desire can hardly be implemented without support from `GHC`, if at all.
 Mitigating this requires support for *multiple home units* in `GHC`.
 
-My project was to implement this feature for `GHC` followed by patching the relevant tools `cabal` and `stack` and, if there was still time left, to make `ghcide` use the new capabilities as a tech-preview.
+My project was to implement this feature for `GHC` followed by patching the relevant tools `cabal-install` and `stack` and, if there was still time left, to make `ghcide` use the new capabilities as a tech-preview.
 
 ## Multiple Home Units
 
@@ -235,7 +235,7 @@ The main MR, that I eventually want to get merged, can be found at:
 
 * [WIP: Implement Multiple Home Units for GHC](https://gitlab.haskell.org/ghc/ghc/-/merge_requests/3950)
 
-In order to let `cabal` and `stack` users benefit from multiple home units, the tools themselves still need to be patched. This turned out to be way harder than hoped, since `Cabal` (the library, not the executable) is designed with single components in mind (what this means exactly is out of scope for this post. In short, we don't have the relevant information available for multiple components at the same time). As a work-around, to actually test the `GHC` changes on real projects, we patched `cabal` to support multiple components in the same repl session... by completely ignoring the clean separation between `cabal` and `Cabal`. This renders the patch virtually useless, as it can never be merged into mainline `cabal`.
+In order to let `cabal-install` and `stack` users benefit from multiple home units, the tools themselves still need to be patched. This turned out to be way harder than hoped, since `Cabal` (the library, not the executable) is designed with single components in mind (what this means exactly is out of scope for this post. In short, we don't have the relevant information available for multiple components at the same time). As a work-around, to actually test the `GHC` changes on real projects, we patched `cabal-install` to support multiple components in the same repl session... by completely ignoring the clean separation between `cabal-install` and `Cabal`. This renders the patch virtually useless, as it can never be merged into mainline `cabal-install`.
 
 Maybe `stack` is easier to patch but unfortunately I ran out of time before being able to even look into this part of my project.
 

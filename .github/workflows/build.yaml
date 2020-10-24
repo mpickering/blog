@@ -31,5 +31,6 @@ jobs:
         FOLDER: build-folder
         REPOSITORY_NAME: mpickering/mpickering.github.io
         ACCESS_TOKEN: ${{ secrets.GH_SECRET }}
+        CLEAN: false  
 
 

@@ -144,7 +144,7 @@ main = hakyll $ do
             let indexCtx =
                     listField "posts-show" teaserCtx (return post) `mappend`
                     listField "posts" teaserCtx (return posts) `mappend`
-                    constField "title" "IDE 2020" `mappend`
+                    constField "title" "IDE" `mappend`
                     defaultContext
 
             getResourceBody
@@ -181,7 +181,7 @@ ideTitle
         cdef = case def of
                  [] -> []
                  (h:t) -> toTitle h : t
-    return $ ("IDE 2020: " ++ fromMaybe cdef value)
+    return $ ("IDE: " ++ fromMaybe cdef value)
 
 data Contrib = Contrib { name :: String, gh :: String } deriving Show
 
@@ -215,8 +215,8 @@ feedConfig = FeedConfiguration
 
 ideFeedConfig :: FeedConfiguration
 ideFeedConfig = FeedConfiguration
-  { feedTitle = "IDE 2020 Updates"
-  , feedDescription = "Updates on Haskell IDE work taking place summer 2020"
+  { feedTitle = "IDE Updates"
+  , feedDescription = "Updates on Haskell IDE work taking place summer 2020 and 2021"
   , feedAuthorName = "Matthew Pickering"
   , feedAuthorEmail = "matthewtpickering@gmail.com"
   , feedRoot = "http://mpickering.github.io/"

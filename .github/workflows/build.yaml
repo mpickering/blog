@@ -31,6 +31,6 @@ jobs:
       with:
         branch: master
         folder: build-folder
-        repository_name: mpickering/mpickering.github.io
+        repository-name: mpickering/mpickering.github.io
         token: ${{ secrets.GH_SECRET }}
         clean: false

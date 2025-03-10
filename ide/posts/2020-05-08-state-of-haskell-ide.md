@@ -50,7 +50,7 @@ haskell-ide-engine and haskell-language-server use [cabal-helper](https://github
 and the server using the Language Server Protocol. It keeps track of a lot of
 bookkeeping within the protocol, like request IDs and client/server
 capabilities, and also provides a virtual file system that mirrors edits coming
-in from the text editor, before they have saved the actually document. Having
+in from the text editor, before they have actually saved the document. Having
 this mirror is pretty useful for external tools that need to be run on physical
 files rather than in-memory text buffers. Its sister library,
 haskell-lsp-types, provides type definitions for the actual specification, so if

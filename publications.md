@@ -6,7 +6,7 @@ title: Publications
 
 [Google Scholar](https://scholar.google.com/citations?user=nRJGAIYAAAAJ&hl=en)
 
-* **Explicit Level Imports** Matthew Pickering, Rodrigo Mesquita, Adam Gundry. TFP 2025 ([PDF](papers/explicit-level-imports.pdf))
+* **Explicit Level Imports** Matthew Pickering, Rodrigo Mesquita, Adam Gundry. TFP 2025 ([PDF](papers/explicit-level-imports.pdf)) (Awarded John McCarthy Prize for best paper overall)
 * **Staging with class: a specification for Typed Template Haskell**. Ningning Xie, Matthew Pickering, Andres Löh, Nicolas Wu, Jeremy Yallop, Meng Wang. POPL 2022 ([PDF](papers/staging-with-class.pdf))
 * **Understanding the Interaction Between Elaboration and Quotation** Matthew Pickering [PhD Thesis](papers/thesis.pdf)
 * **Building an Integrated Development Environment (IDE) on top of a Build System: The tale of a Haskell IDE** Neil Mitchell, Moritz Kiefer, Pepe Iborra, Luke Lau, Zubin Duggal, Hannes Siebenhandl, Javier Neira Sanchez, Matthew Pickering, Alan Zimmerman. IFL 2020 ([PDF](papers/ide.pdf))
